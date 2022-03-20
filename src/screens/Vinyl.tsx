@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, { FC } from 'react'
 
-const Vinyl = () => {
+const Vinyl: FC = () => {
   return (
     <View>
       <Text>Vinyl</Text>
