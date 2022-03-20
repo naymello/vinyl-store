@@ -1,4 +1,4 @@
-import Routes from './src/routes/routes'
+import Routes from './src/routes/Routes'
 
 export default function App() {
   return <Routes />
