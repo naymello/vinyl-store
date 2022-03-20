@@ -21,6 +21,9 @@ const VinylSelection: FC = () => {
     'https://api.github.com/gists/3648d4454d0c68d836fac03386c17be1'
   )
 
+  const vinylJSON = gist?.files['vinyl.json'].content
+  const vinyl: IVinyl[] = vinylJSON ? JSON.parse(vinylJSON) : []
+
   return (
     <View>
       <Text>VinylSelection</Text>
