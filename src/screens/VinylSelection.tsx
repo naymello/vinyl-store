@@ -1,8 +1,10 @@
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import React, { FC } from 'react'
 
 import { IVinyl } from '../common/types'
 import { useRequest } from '../hooks/useRequest'
+
+import VinylCard from '../components/VinylCard'
 
 interface IGistResponse {
   files: IFiles
@@ -26,7 +28,9 @@ const VinylSelection: FC = () => {
 
   return (
     <View>
-      <Text>VinylSelection</Text>
+      {vinyl?.map((vinyl) => (
+        <VinylCard {...vinyl} key={vinyl.id} />
+      ))}
     </View>
   )
 }
