@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { ScrollView } from 'react-native'
 import React, { FC } from 'react'
 
 import { IVinyl } from '../common/types'
@@ -27,11 +27,11 @@ const VinylSelection: FC = () => {
   const vinyl: IVinyl[] = vinylJSON ? JSON.parse(vinylJSON) : []
 
   return (
-    <View>
+    <ScrollView>
       {vinyl?.map((vinyl) => (
         <VinylCard {...vinyl} key={vinyl.id} />
       ))}
-    </View>
+    </ScrollView>
   )
 }
 
