@@ -1,7 +1,6 @@
 import { View, Text } from 'react-native'
-import React, { FC } from 'react'
 
-const Bag: FC = () => {
+const Bag: React.FC = () => {
   return (
     <View>
       <Text>Bag</Text>

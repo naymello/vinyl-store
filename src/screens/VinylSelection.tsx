@@ -1,5 +1,4 @@
 import { ScrollView } from 'react-native'
-import React, { FC } from 'react'
 
 import { IVinyl } from '../common/types'
 import { useRequest } from '../hooks/useRequest'
@@ -18,7 +17,7 @@ interface IVinylJSON {
   content: string
 }
 
-const VinylSelection: FC = () => {
+const VinylSelection: React.FC = () => {
   const { response: gist } = useRequest<IGistResponse>(
     'https://api.github.com/gists/3648d4454d0c68d836fac03386c17be1'
   )
