@@ -9,7 +9,13 @@ const Stack = createNativeStackNavigator()
 
 const Routes: React.FC = () => (
   <NavigationContainer>
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        contentStyle: {
+          backgroundColor: '#FEFFFF',
+        },
+      }}
+    >
       <Stack.Screen name="VinylSelection" component={VinylSelection} />
       <Stack.Screen name="VinylDetails" component={VinylDetails} />
       <Stack.Screen name="Bag" component={Bag} />
