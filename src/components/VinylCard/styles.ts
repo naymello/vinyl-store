@@ -5,6 +5,12 @@ export const Wrapper = styled.View`
   margin: 20px 0;
 `
 
+export const VinylCover = styled.Image`
+  width: 120px;
+  height: 120px;
+  margin-right: 15px;
+`
+
 export const VinylTitle = styled.Text`
   font-size: 16px;
   font-weight: bold;
