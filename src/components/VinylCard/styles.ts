@@ -5,6 +5,10 @@ export const Wrapper = styled.View`
   margin: 15px 0;
 `
 
+export const Information = styled.View`
+  padding: 5px;
+`
+
 export const Cover = styled.Image`
   width: 120px;
   height: 120px;
