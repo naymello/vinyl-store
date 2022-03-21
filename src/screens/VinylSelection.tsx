@@ -4,6 +4,7 @@ import { IVinyl } from '../common/types'
 import { useRequest } from '../hooks/useRequest'
 
 import VinylCard from '../components/VinylCard'
+import { Container } from '../components/Container/styles'
 
 interface IGistResponse {
   files: IFiles
@@ -27,9 +28,11 @@ const VinylSelection: React.FC = () => {
 
   return (
     <ScrollView>
-      {vinyl?.map((vinyl) => (
-        <VinylCard {...vinyl} key={vinyl.id} />
-      ))}
+      <Container>
+        {vinyl?.map((vinyl) => (
+          <VinylCard {...vinyl} key={vinyl.id} />
+        ))}
+      </Container>
     </ScrollView>
   )
 }
