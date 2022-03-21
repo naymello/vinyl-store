@@ -16,3 +16,8 @@ export const VinylTitle = styled.Text`
   font-weight: bold;
   width: 200px;
 `
+
+export const VinylAuthor = styled.Text`
+  font-size: 12px;
+  margin-top: 5px;
+`
