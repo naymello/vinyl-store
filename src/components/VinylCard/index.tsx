@@ -2,22 +2,16 @@ import { View, Text, Image } from 'react-native'
 
 import { IVinyl } from '../../common/types'
 
-import {
-  VinylCover,
-  VinylTitle,
-  Wrapper,
-  VinylAuthor,
-  VinylPrice,
-} from './styles'
+import { Cover, Title, Wrapper, Author, Price } from './styles'
 
 const VinylCard: React.FC<IVinyl> = ({ title, author, price, cover }) => {
   return (
     <Wrapper>
-      <VinylCover source={{ uri: cover }}></VinylCover>
+      <Cover source={{ uri: cover }}></Cover>
       <View>
-        <VinylTitle>{title}</VinylTitle>
-        <VinylAuthor>{author}</VinylAuthor>
-        <VinylPrice>$ {price}</VinylPrice>
+        <Title>{title}</Title>
+        <Author>{author}</Author>
+        <Price>$ {price}</Price>
       </View>
     </Wrapper>
   )
