@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native'
 
@@ -9,7 +7,7 @@ import Bag from '../screens/Bag'
 
 const Stack = createNativeStackNavigator()
 
-const Routes: FC = () => (
+const Routes: React.FC = () => (
   <NavigationContainer>
     <Stack.Navigator>
       <Stack.Screen name="VinylSelection" component={VinylSelection} />
