@@ -21,3 +21,9 @@ export const VinylAuthor = styled.Text`
   font-size: 12px;
   margin-top: 5px;
 `
+
+export const VinylPrice = styled.Text`
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: auto;
+`

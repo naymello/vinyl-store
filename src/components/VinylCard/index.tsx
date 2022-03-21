@@ -2,7 +2,13 @@ import { View, Text, Image } from 'react-native'
 
 import { IVinyl } from '../../common/types'
 
-import { VinylCover, VinylTitle, Wrapper, VinylAuthor } from './styles'
+import {
+  VinylCover,
+  VinylTitle,
+  Wrapper,
+  VinylAuthor,
+  VinylPrice,
+} from './styles'
 
 const VinylCard: React.FC<IVinyl> = ({ title, author, price, cover }) => {
   return (
@@ -11,7 +17,7 @@ const VinylCard: React.FC<IVinyl> = ({ title, author, price, cover }) => {
       <View>
         <VinylTitle>{title}</VinylTitle>
         <VinylAuthor>{author}</VinylAuthor>
-        <Text>$ {price}</Text>
+        <VinylPrice>$ {price}</VinylPrice>
       </View>
     </Wrapper>
   )
