@@ -9,3 +9,7 @@ export const Container = styled.View`
   justify-content: space-between;
   padding: 0 15px;
 `
+
+export const SafeAreaContainer = styled.SafeAreaView`
+  background-color: ${({ theme }) => theme.colors.accent};
+`
