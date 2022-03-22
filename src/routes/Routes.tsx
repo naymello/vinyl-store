@@ -5,9 +5,9 @@ import VinylSelection from '../screens/VinylSelection'
 import VinylDetails from '../screens/VinylDetails'
 import Bag from '../screens/Bag'
 
-import Header from '../components/Header'
-
 import mainTheme from '../themes/mainTheme'
+
+import Logo from '../assets/Logo'
 
 const Stack = createNativeStackNavigator()
 
@@ -19,10 +19,19 @@ const Routes: React.FC = () => (
         contentStyle: {
           backgroundColor: mainTheme.colors.background,
         },
-        header: (props) => <Header {...props} />,
+        headerStyle: {
+          backgroundColor: mainTheme.colors.accent,
+        },
+        headerShadowVisible: false,
       }}
     >
-      <Stack.Screen name="VinylSelection" component={VinylSelection} />
+      <Stack.Screen
+        name="VinylSelection"
+        component={VinylSelection}
+        options={{
+          headerTitle: () => <Logo />,
+        }}
+      />
       <Stack.Screen name="VinylDetails" component={VinylDetails} />
       <Stack.Screen name="Bag" component={Bag} />
     </Stack.Navigator>
