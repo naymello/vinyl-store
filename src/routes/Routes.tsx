@@ -23,7 +23,12 @@ const Routes: React.FC = () => (
       <Stack.Screen
         name="VinylSelection"
         component={VinylSelection}
-        options={{ headerTitle: (props) => <Header {...props} /> }}
+        options={{
+          headerTitle: (props) => <Header {...props} />,
+          headerStyle: {
+            backgroundColor: mainTheme.colors.accent,
+          },
+        }}
       />
       <Stack.Screen name="VinylDetails" component={VinylDetails} />
       <Stack.Screen name="Bag" component={Bag} />
