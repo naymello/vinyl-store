@@ -5,6 +5,8 @@ import VinylSelection from '../screens/VinylSelection'
 import VinylDetails from '../screens/VinylDetails'
 import Bag from '../screens/Bag'
 
+import mainTheme from '../themes/mainTheme'
+
 const Stack = createNativeStackNavigator()
 
 const Routes: React.FC = () => (
@@ -12,7 +14,7 @@ const Routes: React.FC = () => (
     <Stack.Navigator
       screenOptions={{
         contentStyle: {
-          backgroundColor: '#FEFFFF',
+          backgroundColor: mainTheme.colors.background,
         },
       }}
     >
