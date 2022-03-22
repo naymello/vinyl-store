@@ -2,9 +2,10 @@ import styled from 'styled-components/native'
 
 export const Container = styled.View`
   width: 100%;
-  height: 120px;
+  height: 70px;
   background-color: ${({ theme }) => theme.colors.accent};
   flex-direction: row;
-  align-items: flex-end;
-  padding: 15px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
 `
