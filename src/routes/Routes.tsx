@@ -8,6 +8,7 @@ import Bag from '../screens/Bag'
 import mainTheme from '../themes/mainTheme'
 
 import Logo from '../assets/Logo'
+import BagIcon from '../assets/BagIcon'
 
 const Stack = createNativeStackNavigator()
 
@@ -28,9 +29,12 @@ const Routes: React.FC = () => (
       <Stack.Screen
         name="VinylSelection"
         component={VinylSelection}
-        options={{
+        options={({ navigation }) => ({
           headerTitle: () => <Logo />,
-        }}
+          headerRight: () => (
+            <BagIcon onPress={() => navigation.navigate('Bag')} />
+          ),
+        })}
       />
       <Stack.Screen name="VinylDetails" component={VinylDetails} />
       <Stack.Screen name="Bag" component={Bag} />
