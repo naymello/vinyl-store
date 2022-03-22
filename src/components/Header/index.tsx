@@ -1,4 +1,3 @@
-import { getHeaderTitle } from '@react-navigation/elements'
 import { NativeStackHeaderProps } from '@react-navigation/native-stack'
 
 import { Container } from './styles'
