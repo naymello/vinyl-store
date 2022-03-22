@@ -14,6 +14,7 @@ const Stack = createNativeStackNavigator()
 const Routes: React.FC = () => (
   <NavigationContainer>
     <Stack.Navigator
+      initialRouteName="VinylSelection"
       screenOptions={{
         contentStyle: {
           backgroundColor: mainTheme.colors.background,
