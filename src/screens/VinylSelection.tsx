@@ -1,4 +1,5 @@
 import { ScrollView } from 'react-native'
+import { StatusBar } from 'expo-status-bar'
 
 import { IVinyl } from '../common/types'
 import { useRequest } from '../hooks/useRequest'
@@ -27,13 +28,16 @@ const VinylSelection: React.FC = () => {
   const vinyl: IVinyl[] = vinylJSON ? JSON.parse(vinylJSON) : []
 
   return (
-    <ScrollView>
-      <Container>
-        {vinyl?.map((vinyl) => (
-          <VinylCard {...vinyl} key={vinyl.id} />
-        ))}
-      </Container>
-    </ScrollView>
+    <>
+      <StatusBar />
+      <ScrollView>
+        <Container>
+          {vinyl?.map((vinyl) => (
+            <VinylCard {...vinyl} key={vinyl.id} />
+          ))}
+        </Container>
+      </ScrollView>
+    </>
   )
 }
 
