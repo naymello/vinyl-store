@@ -28,6 +28,7 @@ const Routes: React.FC = () => (
           headerStyle: {
             backgroundColor: mainTheme.colors.accent,
           },
+          headerShadowVisible: false,
         }}
       />
       <Stack.Screen name="VinylDetails" component={VinylDetails} />
