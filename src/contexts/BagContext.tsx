@@ -13,7 +13,12 @@ const BagContext = createContext<IBagContext | null>(null)
 const bagContext: React.FC = ({ children }) => {
   const [vinyl, setVinyl] = useState<IVinyl[]>([])
 
-  const addVinyl = (vinyl: IVinyl) => {}
+  const addVinyl = (newVinyl: IVinyl) => {
+    const vinylCopy = [...vinyl]
+    vinylCopy.push(newVinyl)
+
+    setVinyl(vinylCopy)
+  }
 
   const deleteVinyl = (id: number) => {}
 
