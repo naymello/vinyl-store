@@ -1,9 +1,9 @@
 # vinylStore
 
 <p float="left" align="middle">
-  <img src="https://i.imgur.com/ucrD5gn.png" width="275px">
-  <img src="https://i.imgur.com/pI2S4Ep.png" width="275px">
-  <img src="https://i.imgur.com/bI8Pyw4.png" width="275px">
+  <img src="https://i.imgur.com/ucrD5gn.png" width="250px">
+  <img src="https://i.imgur.com/pI2S4Ep.png" width="250px">
+  <img src="https://i.imgur.com/bI8Pyw4.png" width="250px">
 </p>
 
 ## What is it?
