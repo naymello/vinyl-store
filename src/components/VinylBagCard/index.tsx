@@ -9,10 +9,16 @@ import {
   DeleteButton,
 } from './styles'
 
-const VinylBagCard: React.FC<IVinylControls> = ({ title, price, cover }) => {
+const VinylBagCard: React.FC<IVinylControls> = ({
+  id,
+  title,
+  price,
+  cover,
+  deleteVinyl,
+}) => {
   return (
     <Wrapper>
-      <DeleteButton />
+      <DeleteButton onPress={() => deleteVinyl(id)} />
       <Cover source={{ uri: cover }}></Cover>
       <Information>
         <Title>{title}</Title>
