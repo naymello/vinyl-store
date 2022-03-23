@@ -5,9 +5,9 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack'
 
 import { IVinylContext, RootStackParamList } from '../common/types'
 
+import { VinylContext } from '../contexts/VinylContext'
 import VinylCard from '../components/VinylCard'
 import { Container } from '../components/Container/styles'
-import { VinylContext } from '../contexts/VinylContext'
 
 type Props = NativeStackScreenProps<RootStackParamList, 'VinylSelection'>
 
