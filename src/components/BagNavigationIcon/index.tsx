@@ -16,7 +16,7 @@ const BagNavigationIcon: React.FC<Props> = ({ navigate }) => {
 
   return (
     <NavigationIcon navigate={navigate} icon={<BagIcon />}>
-      {bagTotalQuantity && <BagCounter>{bagTotalQuantity}</BagCounter>}
+      {!!bagTotalQuantity && <BagCounter>{bagTotalQuantity}</BagCounter>}
     </NavigationIcon>
   )
 }
