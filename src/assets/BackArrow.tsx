@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Svg, { SvgProps, Path } from 'react-native-svg'
 
-const SvgComponent = (props: SvgProps) => (
+const BackArrow = (props: SvgProps) => (
   <Svg width={13} height={22} fill="none" {...props}>
     <Path
       fillRule="evenodd"
@@ -12,4 +12,4 @@ const SvgComponent = (props: SvgProps) => (
   </Svg>
 )
 
-export default SvgComponent
+export default BackArrow
