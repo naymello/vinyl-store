@@ -1,5 +1,6 @@
 import { createContext } from 'react'
 
+import { gitHubGistsEndpoint } from '../common/constants'
 import { IVinyl, IVinylContext } from '../common/types'
 import { useRequest } from '../hooks/useRequest'
 
@@ -14,9 +15,7 @@ interface IGistResponse {
 }
 
 const VinylContextProvider: React.FC = ({ children }) => {
-  const { response: gist } = useRequest<IGistResponse>(
-    'https://api.github.com/gists/3648d4454d0c68d836fac03386c17be1'
-  )
+  const { response: gist } = useRequest<IGistResponse>(gitHubGistsEndpoint)
 
   const vinylJSON = gist?.files['vinyl.json'].content
   const vinyl: IVinyl[] = vinylJSON ? JSON.parse(vinylJSON) : []
