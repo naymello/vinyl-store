@@ -18,7 +18,7 @@ const VinylDetails: React.FC<Props> = ({ route }) => {
 
   return (
     <>
-      <VinylInformation vinyl={vinyl} />
+      <VinylInformation {...vinyl} />
     </>
   )
 }
