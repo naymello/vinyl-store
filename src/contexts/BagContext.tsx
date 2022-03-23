@@ -22,9 +22,10 @@ const BagContextProvider: React.FC = ({ children }) => {
   }
 
   const getBagTotal = (): number => {
-    const bagTotal = vinylInBag.reduce((previous, current) => {
-      return previous + current.price * (current.quantity || 1)
-    }, 0)
+    const bagTotal = vinylInBag.reduce(
+      (previous, current) => previous + current.price * (current.quantity || 1),
+      0
+    )
 
     return bagTotal
   }
