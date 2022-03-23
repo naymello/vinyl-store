@@ -5,3 +5,13 @@ export const Container = styled.View`
   height: 100px;
   background-color: ${({ theme }) => theme.colors.accent};
 `
+
+export const FooterText = styled.Text`
+  font-size: 20px;
+  font-weight: bold;
+`
+
+export const FooterValue = styled.Text`
+  font-size: 24px;
+  font-weight: bold;
+`

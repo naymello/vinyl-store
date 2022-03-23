@@ -1,6 +1,4 @@
-import { Text } from 'react-native'
-
-import { Container } from './styles'
+import { Container, FooterText, FooterValue } from './styles'
 
 interface Props {
   totalValue: number
@@ -9,7 +7,9 @@ interface Props {
 const BagFooter: React.FC<Props> = ({ totalValue }) => {
   return (
     <Container>
-      <Text>BagFooter</Text>
+      <FooterText>
+        Total: <FooterValue> $ {totalValue}</FooterValue>
+      </FooterText>
     </Container>
   )
 }
