@@ -47,6 +47,11 @@ const Routes: React.FC = () => (
         name="Bag"
         component={Bag}
         options={({ navigation }) => ({
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 18,
+            color: mainTheme.colors.accentText,
+          },
           title: 'Selected vinyl',
           headerLeft: () => (
             <NavigationIcon
