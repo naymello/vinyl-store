@@ -6,7 +6,7 @@ export const Wrapper = styled.View`
 `
 
 export const Information = styled.View`
-  padding: 10px 5px;
+  padding: 0 5px;
 `
 
 export const Cover = styled.Image`
@@ -34,13 +34,8 @@ export const Title = styled.Text`
   width: 200px;
 `
 
-export const RowWrapper = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: auto;
-`
-
 export const Price = styled.Text`
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
+  margin-top: auto;
 `
