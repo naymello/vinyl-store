@@ -6,11 +6,11 @@ import VinylDetails from '../screens/VinylDetails'
 import Bag from '../screens/Bag'
 
 import NavigationIcon from '../components/NavigationIcon'
+import BagNavigationIcon from '../components/BagNavigationIcon'
 
 import mainTheme from '../themes/mainTheme'
 
 import Logo from '../assets/Logo'
-import BagIcon from '../assets/BagIcon'
 import BackArrow from '../assets/BackArrow'
 
 const Stack = createNativeStackNavigator()
@@ -35,10 +35,7 @@ const Routes: React.FC = () => (
         options={({ navigation }) => ({
           headerTitle: () => <Logo />,
           headerRight: () => (
-            <NavigationIcon
-              navigate={() => navigation.navigate('Bag')}
-              icon={<BagIcon />}
-            />
+            <BagNavigationIcon navigate={() => navigation.navigate('Bag')} />
           ),
         })}
       />
@@ -54,10 +51,7 @@ const Routes: React.FC = () => (
             />
           ),
           headerRight: () => (
-            <NavigationIcon
-              navigate={() => navigation.navigate('Bag')}
-              icon={<BagIcon />}
-            />
+            <BagNavigationIcon navigate={() => navigation.navigate('Bag')} />
           ),
         })}
       />
