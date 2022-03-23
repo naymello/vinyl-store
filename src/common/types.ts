@@ -7,6 +7,7 @@ export interface IVinyl {
   cover: string
   rating: number
   price: number
+  quantity?: number
 }
 
 export interface IBagContext {
