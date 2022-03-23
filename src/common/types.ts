@@ -13,7 +13,7 @@ export interface IVinylInBag extends IVinyl {
 }
 
 export interface IBagContext {
-  vinylInBag: IVinyl[]
+  vinylInBag: IVinylInBag[]
   addVinyl: (vinyl: IVinyl) => void
   deleteVinyl: (id: number) => void
   changeVinylQuantity: (id: number, mode: 'increase' | 'decrease') => void
