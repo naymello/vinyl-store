@@ -49,7 +49,7 @@ const Routes: React.FC = () => (
           headerTitle: () => <Logo />,
           headerLeft: () => (
             <NavigationIcon
-              navigate={() => navigation.navigate('VinylSelection')}
+              navigate={() => navigation.goBack()}
               icon={<BackArrow />}
             />
           ),
@@ -73,7 +73,7 @@ const Routes: React.FC = () => (
           title: 'Selected vinyl',
           headerLeft: () => (
             <NavigationIcon
-              navigate={() => navigation.navigate('VinylSelection')}
+              navigate={() => navigation.goBack()}
               icon={<BackArrow />}
             />
           ),
