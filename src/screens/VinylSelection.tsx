@@ -11,15 +11,11 @@ import { Container } from '../components/Container/styles'
 type Props = NativeStackScreenProps<RootStackParamList, 'VinylSelection'>
 
 interface IGistResponse {
-  files: IFiles
-}
-
-interface IFiles {
-  [key: string]: IVinylJSON
-}
-
-interface IVinylJSON {
-  content: string
+  files: {
+    [key: string]: {
+      content: string
+    }
+  }
 }
 
 const VinylSelection: React.FC<Props> = ({ navigation }) => {
