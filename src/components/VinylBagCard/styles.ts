@@ -37,10 +37,10 @@ export const Title = styled.Text`
 export const RowWrapper = styled.View`
   flex-direction: row;
   justify-content: space-between;
+  margin-top: auto;
 `
 
 export const Price = styled.Text`
   font-size: 24px;
   font-weight: bold;
-  margin-top: auto;
 `
