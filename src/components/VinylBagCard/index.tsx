@@ -1,5 +1,7 @@
 import { IVinyl } from '../../common/types'
 
+import QuantityControl from '../QuantityControl'
+
 import {
   Cover,
   Title,
@@ -33,6 +35,7 @@ const VinylBagCard: React.FC<Props> = ({
         <Title>{title}</Title>
         <RowWrapper>
           <Price>$ {price.toFixed(2)}</Price>
+          <QuantityControl vinylId={id} />
         </RowWrapper>
       </Information>
     </Wrapper>
