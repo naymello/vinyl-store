@@ -20,7 +20,12 @@ const bagContext: React.FC = ({ children }) => {
     setVinyl(vinylCopy)
   }
 
-  const deleteVinyl = (id: number) => {}
+  const deleteVinyl = (id: number) => {
+    const vinylCopy = [...vinyl]
+    const filteredVinyl = vinylCopy.filter((vinyl) => vinyl.id !== id)
+
+    setVinyl(filteredVinyl)
+  }
 
   return (
     <BagContext.Provider value={{ vinyl, addVinyl, deleteVinyl }}>
