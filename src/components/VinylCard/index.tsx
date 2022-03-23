@@ -8,6 +8,7 @@ interface Props extends IVinyl {
 }
 
 const VinylCard: React.FC<Props> = ({
+  id,
   title,
   author,
   price,
@@ -15,8 +16,8 @@ const VinylCard: React.FC<Props> = ({
   navigation,
 }) => {
   return (
-    <Wrapper>
-      <Cover source={{ uri: cover }}></Cover>
+    <Wrapper onPress={() => navigation.navigate('VinylDetails', { id })}>
+      <Cover source={{ uri: cover }} />
       <Information>
         <Title>{title}</Title>
         <Author>{author}</Author>
