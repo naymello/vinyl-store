@@ -14,14 +14,16 @@ const Bag: React.FC = () => {
   const totalValue = getBagTotal()
 
   return (
-    <ScrollView>
-      <Container>
-        {vinylInBag.map((vinyl) => (
-          <VinylBagCard {...vinyl} key={vinyl.id} />
-        ))}
-      </Container>
+    <>
+      <ScrollView>
+        <Container>
+          {vinylInBag.map((vinyl) => (
+            <VinylBagCard {...vinyl} key={vinyl.id} />
+          ))}
+        </Container>
+      </ScrollView>
       <BagFooter totalValue={totalValue} />
-    </ScrollView>
+    </>
   )
 }
 
