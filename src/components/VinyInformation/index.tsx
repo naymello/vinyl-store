@@ -24,7 +24,9 @@ const VinylInformation: React.FC<IVinyl> = ({
           </View>
           <View>
             {genres.map((genre) => (
-              <TextInformation fontSize="16px">{genre}</TextInformation>
+              <TextInformation fontSize="16px" key={genre}>
+                {genre}
+              </TextInformation>
             ))}
           </View>
         </Container>
