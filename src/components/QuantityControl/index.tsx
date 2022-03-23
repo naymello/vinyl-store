@@ -15,11 +15,11 @@ const QuantityControl: React.FC<Props> = ({ vinylId, quantity }) => {
 
   return (
     <Wrapper>
-      <Button>
+      <Button onPress={() => changeVinylQuantity(vinylId, 'decrease')}>
         <Caption>-</Caption>
       </Button>
       <Quantity>{quantity}</Quantity>
-      <Button>
+      <Button onPress={() => changeVinylQuantity(vinylId, 'increase')}>
         <Caption>+</Caption>
       </Button>
     </Wrapper>
