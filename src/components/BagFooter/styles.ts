@@ -4,7 +4,7 @@ export const Container = styled.View`
   width: 100%;
   height: 180px;
   padding: 20px;
-  background-color: ${({ theme }) => theme.colors.accent};
+  background-color: ${({ theme }) => theme.colors.background};
 `
 
 export const FooterText = styled.Text`
