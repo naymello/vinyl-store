@@ -19,7 +19,7 @@ export const Cover = styled.Image`
 export const Title = styled.Text`
   font-size: 16px;
   font-weight: bold;
-  width: 50%;
+  width: 60%;
 `
 
 export const Author = styled.Text`
