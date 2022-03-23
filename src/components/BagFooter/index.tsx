@@ -1,3 +1,5 @@
+import Button from '../Button'
+
 import { Container, FooterText, FooterValue } from './styles'
 
 interface Props {
@@ -10,6 +12,7 @@ const BagFooter: React.FC<Props> = ({ totalValue }) => {
       <FooterText>
         Total: <FooterValue> $ {totalValue}</FooterValue>
       </FooterText>
+      <Button buttonText="Go to payment" />
     </Container>
   )
 }
