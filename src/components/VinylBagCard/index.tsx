@@ -1,4 +1,4 @@
-import { IVinyl } from '../../common/types'
+import { IVinylInBag } from '../../common/types'
 
 import QuantityControl from '../QuantityControl'
 
@@ -14,7 +14,7 @@ import {
 
 import DeleteIcon from '../../assets/DeleteIcon'
 
-interface Props extends IVinyl {
+interface Props extends IVinylInBag {
   deleteVinyl: (id: number) => void
 }
 
@@ -23,6 +23,7 @@ const VinylBagCard: React.FC<Props> = ({
   title,
   price,
   cover,
+  quantity,
   deleteVinyl,
 }) => {
   return (
@@ -35,7 +36,7 @@ const VinylBagCard: React.FC<Props> = ({
         <Title>{title}</Title>
         <RowWrapper>
           <Price>$ {price.toFixed(2)}</Price>
-          <QuantityControl vinylId={id} />
+          <QuantityControl vinylId={id} quantity={quantity} />
         </RowWrapper>
       </Information>
     </Wrapper>
