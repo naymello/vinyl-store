@@ -11,7 +11,7 @@ export interface IVinyl {
 }
 
 export interface IBagContext {
-  vinyl: IVinyl[]
+  vinylInBag: IVinyl[]
   addVinyl: (vinyl: IVinyl) => void
   deleteVinyl: (id: number) => void
 }

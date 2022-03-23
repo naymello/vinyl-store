@@ -7,7 +7,7 @@ import { IBagContext } from '../common/types'
 import { Container } from '../components/Container/styles'
 
 const Bag: React.FC = () => {
-  const { vinyl } = useContext(BagContext) as IBagContext
+  const { vinylInBag } = useContext(BagContext) as IBagContext
 
   return (
     <ScrollView>

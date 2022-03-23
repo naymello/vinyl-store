@@ -5,24 +5,24 @@ import { IVinyl, IBagContext } from '../common/types'
 export const BagContext = createContext<IBagContext | null>(null)
 
 const BagContextProvider: React.FC = ({ children }) => {
-  const [vinyl, setVinyl] = useState<IVinyl[]>([])
+  const [vinylInBag, setVinylInBag] = useState<IVinyl[]>([])
 
   const addVinyl = (newVinyl: IVinyl) => {
-    const vinylCopy = [...vinyl]
-    vinylCopy.push(newVinyl)
+    const vinylInBagCopy = [...vinylInBag]
+    vinylInBagCopy.push(newVinyl)
 
-    setVinyl(vinylCopy)
+    setVinylInBag(vinylInBagCopy)
   }
 
   const deleteVinyl = (id: number) => {
-    const vinylCopy = [...vinyl]
-    const filteredVinyl = vinylCopy.filter((vinyl) => vinyl.id !== id)
+    const vinylInBagCopy = [...vinylInBag]
+    const filteredVinylInBag = vinylInBagCopy.filter((vinyl) => vinyl.id !== id)
 
-    setVinyl(filteredVinyl)
+    setVinylInBag(filteredVinylInBag)
   }
 
   return (
-    <BagContext.Provider value={{ vinyl, addVinyl, deleteVinyl }}>
+    <BagContext.Provider value={{ vinylInBag, addVinyl, deleteVinyl }}>
       {children}
     </BagContext.Provider>
   )
