@@ -6,6 +6,7 @@ export const Wrapper = styled.TouchableOpacity`
 `
 
 export const Information = styled.View`
+  width: 100%;
   padding: 5px;
 `
 
@@ -18,7 +19,7 @@ export const Cover = styled.Image`
 export const Title = styled.Text`
   font-size: 16px;
   font-weight: bold;
-  width: 200px;
+  width: 50%;
 `
 
 export const Author = styled.Text`
