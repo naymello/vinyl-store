@@ -15,6 +15,17 @@ export const Cover = styled.Image`
   margin-right: 15px;
 `
 
+export const DeleteButton = styled.TouchableOpacity`
+  background-color: ${({ theme }) => theme.colors.accent};
+  width: 25px;
+  height: 25px;
+
+  position: absolute;
+  z-index: 2;
+  top: -10px;
+  left: -10px;
+`
+
 export const Title = styled.Text`
   font-size: 16px;
   font-weight: bold;
