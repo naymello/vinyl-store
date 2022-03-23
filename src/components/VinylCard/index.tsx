@@ -1,8 +1,19 @@
-import { IVinyl } from '../../common/types'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+import { IVinyl, RootStackParamList } from '../../common/types'
 
 import { Cover, Title, Wrapper, Author, Price, Information } from './styles'
 
-const VinylCard: React.FC<IVinyl> = ({ title, author, price, cover }) => {
+interface Props extends IVinyl {
+  navigation: NativeStackNavigationProp<RootStackParamList, 'VinylSelection'>
+}
+
+const VinylCard: React.FC<Props> = ({
+  title,
+  author,
+  price,
+  cover,
+  navigation,
+}) => {
   return (
     <Wrapper>
       <Cover source={{ uri: cover }}></Cover>
