@@ -6,9 +6,12 @@ import { IBagContext } from '../common/types'
 
 import { Container } from '../components/Container/styles'
 import VinylBagCard from '../components/VinylBagCard'
+import BagFooter from '../components/BagFooter'
 
 const Bag: React.FC = () => {
-  const { vinylInBag } = useContext(BagContext) as IBagContext
+  const { vinylInBag, getBagTotal } = useContext(BagContext) as IBagContext
+
+  const totalValue = getBagTotal()
 
   return (
     <ScrollView>
@@ -17,6 +20,7 @@ const Bag: React.FC = () => {
           <VinylBagCard {...vinyl} key={vinyl.id} />
         ))}
       </Container>
+      <BagFooter totalValue={totalValue} />
     </ScrollView>
   )
 }
