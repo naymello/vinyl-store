@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Svg, { SvgProps, Path } from 'react-native-svg'
 
-const Bag = (props: SvgProps) => (
+const BagIcon = (props: SvgProps) => (
   <Svg width={26} height={26} fill="none" {...props}>
     <Path
       fillRule="evenodd"
@@ -12,4 +12,4 @@ const Bag = (props: SvgProps) => (
   </Svg>
 )
 
-export default Bag
+export default BagIcon
