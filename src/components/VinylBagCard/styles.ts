@@ -19,6 +19,8 @@ export const DeleteButton = styled.TouchableOpacity`
   background-color: ${({ theme }) => theme.colors.accent};
   width: 25px;
   height: 25px;
+  justify-content: center;
+  align-items: center;
 
   position: absolute;
   z-index: 2;
