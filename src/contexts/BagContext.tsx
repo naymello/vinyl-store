@@ -16,12 +16,7 @@ const BagContextProvider: React.FC = ({ children }) => {
     const hasSameVinyl = sameVinylIndex !== -1
 
     if (hasSameVinyl) {
-      const sameVinyl = vinylInBagCopy[sameVinylIndex]
-
-      vinylInBagCopy[sameVinylIndex] = {
-        ...sameVinyl,
-        quantity: ++sameVinyl.quantity,
-      }
+      changeVinylQuantity(newVinyl.id)
     } else {
       vinylInBagCopy.push({ ...newVinyl, quantity: 1 })
     }
