@@ -1,4 +1,4 @@
-import { IVinylControls } from '../../common/types'
+import { IVinylControl } from '../../common/types'
 
 import {
   Cover,
@@ -11,7 +11,7 @@ import {
 
 import DeleteIcon from '../../assets/DeleteIcon'
 
-const VinylBagCard: React.FC<IVinylControls> = ({
+const VinylBagCard: React.FC<IVinylControl> = ({
   id,
   title,
   price,

@@ -10,7 +10,7 @@ export interface IVinyl {
   quantity?: number
 }
 
-export interface IVinylControls extends IVinyl {
+export interface IVinylControl extends IVinyl {
   deleteVinyl: (id: number) => void
 }
 
