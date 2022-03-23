@@ -5,7 +5,6 @@ export interface IVinyl {
   releaseYear: number
   genres: string[]
   cover: string
-  rating: number
   price: number
   quantity?: number
 }
