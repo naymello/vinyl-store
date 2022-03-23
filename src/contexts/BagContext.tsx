@@ -58,6 +58,9 @@ const BagContextProvider: React.FC = ({ children }) => {
     const vinylIndex = vinylInBag.findIndex((vinyl) => vinyl.id === id)
     const vinyl = vinylInBagCopy[vinylIndex]
 
+    if (mode === 'decrease' && vinyl.quantity === 1)
+      return deleteVinyl(vinyl.id)
+
     if (mode === 'increase') {
       vinylInBagCopy[vinylIndex] = {
         ...vinyl,
