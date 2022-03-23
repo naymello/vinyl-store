@@ -21,8 +21,8 @@ const VinylContextProvider: React.FC = ({ children }) => {
   const vinylJSON = gist?.files['vinyl.json'].content
   const vinyl: IVinyl[] = vinylJSON ? JSON.parse(vinylJSON) : []
 
-  const getVinylById = (id: number): IVinyl | undefined => {
-    const vinylFound = vinyl.find((vinyl) => vinyl.id === id)
+  const getVinylById = (id: number): IVinyl => {
+    const vinylFound = vinyl.find((vinyl) => vinyl.id === id) as IVinyl
 
     return vinylFound
   }

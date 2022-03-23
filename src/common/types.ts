@@ -20,7 +20,7 @@ export interface IBagContext {
 
 export interface IVinylContext {
   vinyl: IVinyl[]
-  getVinylById: (id: number) => IVinyl | undefined
+  getVinylById: (id: number) => IVinyl
 }
 
 export type RootStackParamList = {
