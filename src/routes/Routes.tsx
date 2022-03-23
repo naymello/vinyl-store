@@ -5,6 +5,8 @@ import VinylSelection from '../screens/VinylSelection'
 import VinylDetails from '../screens/VinylDetails'
 import Bag from '../screens/Bag'
 
+import BagButton from '../components/BagButton'
+
 import mainTheme from '../themes/mainTheme'
 
 import Logo from '../assets/Logo'
@@ -31,9 +33,7 @@ const Routes: React.FC = () => (
         component={VinylSelection}
         options={({ navigation }) => ({
           headerTitle: () => <Logo />,
-          headerRight: () => (
-            <BagIcon onPress={() => navigation.navigate('Bag')} />
-          ),
+          headerRight: () => <BagButton navigation={navigation} />,
         })}
       />
       <Stack.Screen name="VinylDetails" component={VinylDetails} />
