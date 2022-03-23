@@ -21,7 +21,7 @@ const BagContextProvider: React.FC = ({ children }) => {
     setVinylInBag(filteredVinylInBag)
   }
 
-  const getBagTotal = (): number => {
+  const getBagTotalPrice = (): number => {
     const bagTotal = vinylInBag.reduce(
       (previous, current) => previous + current.price * (current.quantity || 1),
       0
@@ -30,7 +30,7 @@ const BagContextProvider: React.FC = ({ children }) => {
     return bagTotal
   }
 
-  const getBagVinylQuantity = (): number => {
+  const getBagTotalQuantity = (): number => {
     const bagVinylQuantity = vinylInBag.reduce(
       (previous, current) => previous + (current.quantity || 1),
       0
@@ -39,8 +39,8 @@ const BagContextProvider: React.FC = ({ children }) => {
     return bagVinylQuantity
   }
 
-  const bagTotalPrice = getBagTotal()
-  const bagTotalQuantity = getBagVinylQuantity()
+  const bagTotalPrice = getBagTotalPrice()
+  const bagTotalQuantity = getBagTotalQuantity()
 
   return (
     <BagContext.Provider
