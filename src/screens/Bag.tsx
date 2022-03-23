@@ -9,7 +9,9 @@ import VinylBagCard from '../components/VinylBagCard'
 import BagFooter from '../components/BagFooter'
 
 const Bag: React.FC = () => {
-  const { vinylInBag, getBagTotal } = useContext(BagContext) as IBagContext
+  const { vinylInBag, deleteVinyl, getBagTotal } = useContext(
+    BagContext
+  ) as IBagContext
 
   const totalValue = getBagTotal()
 
@@ -18,7 +20,7 @@ const Bag: React.FC = () => {
       <ScrollView>
         <Container>
           {vinylInBag.map((vinyl) => (
-            <VinylBagCard {...vinyl} key={vinyl.id} />
+            <VinylBagCard {...vinyl} deleteVinyl={deleteVinyl} key={vinyl.id} />
           ))}
         </Container>
       </ScrollView>
