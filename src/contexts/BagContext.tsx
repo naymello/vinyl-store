@@ -4,7 +4,7 @@ import { IVinyl, IBagContext } from '../common/types'
 
 const BagContext = createContext<IBagContext | null>(null)
 
-const bagContext: React.FC = ({ children }) => {
+const BagContextProvider: React.FC = ({ children }) => {
   const [vinyl, setVinyl] = useState<IVinyl[]>([])
 
   const addVinyl = (newVinyl: IVinyl) => {
@@ -28,4 +28,4 @@ const bagContext: React.FC = ({ children }) => {
   )
 }
 
-export default bagContext
+export default BagContextProvider
