@@ -8,7 +8,7 @@ import { BagCounter } from './styles'
 import BagIcon from '../../assets/BagIcon'
 
 interface Props {
-  navigate: any
+  navigate: () => void
 }
 
 const BagNavigationIcon: React.FC<Props> = ({ navigate }) => {

@@ -1,7 +1,7 @@
 import { TouchableOpacity } from 'react-native'
 
 interface Props {
-  navigate: any
+  navigate: () => void
   icon: JSX.Element
 }
 
