@@ -7,6 +7,7 @@ import {
   Price,
   Information,
   DeleteButton,
+  RowWrapper,
 } from './styles'
 
 import DeleteIcon from '../../assets/DeleteIcon'
@@ -30,7 +31,9 @@ const VinylBagCard: React.FC<Props> = ({
       <Cover source={{ uri: cover }}></Cover>
       <Information>
         <Title>{title}</Title>
-        <Price>$ {price.toFixed(2)}</Price>
+        <RowWrapper>
+          <Price>$ {price.toFixed(2)}</Price>
+        </RowWrapper>
       </Information>
     </Wrapper>
   )

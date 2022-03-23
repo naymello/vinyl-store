@@ -34,6 +34,11 @@ export const Title = styled.Text`
   width: 200px;
 `
 
+export const RowWrapper = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+`
+
 export const Price = styled.Text`
   font-size: 24px;
   font-weight: bold;
