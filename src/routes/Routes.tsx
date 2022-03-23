@@ -42,7 +42,24 @@ const Routes: React.FC = () => (
           ),
         })}
       />
-      <Stack.Screen name="VinylDetails" component={VinylDetails} />
+      <Stack.Screen
+        name="VinylDetails"
+        component={VinylDetails}
+        options={({ navigation }) => ({
+          headerLeft: () => (
+            <NavigationIcon
+              navigate={() => navigation.navigate('VinylSelection')}
+              icon={<BackArrow />}
+            />
+          ),
+          headerRight: () => (
+            <NavigationIcon
+              navigate={() => navigation.navigate('Bag')}
+              icon={<BagIcon />}
+            />
+          ),
+        })}
+      />
       <Stack.Screen
         name="Bag"
         component={Bag}
