@@ -6,7 +6,10 @@ export interface IVinyl {
   genres: string[]
   cover: string
   price: number
-  quantity?: number
+}
+
+export interface IVinylInBag extends IVinyl {
+  quantity: number
 }
 
 export interface IBagContext {
