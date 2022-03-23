@@ -7,6 +7,8 @@ import { BagContext } from '../contexts/BagContext'
 import { VinylContext } from '../contexts/VinylContext'
 
 import VinylInformation from '../components/VinyInformation'
+import Button from '../components/Button'
+import { Container } from '../components/Container/styles'
 
 type Props = NativeStackScreenProps<RootStackParamList, 'VinylDetails'>
 
@@ -19,6 +21,9 @@ const VinylDetails: React.FC<Props> = ({ route }) => {
   return (
     <>
       <VinylInformation {...vinyl} />
+      <Container>
+        <Button buttonText="Add to your bag" action={() => addVinyl(vinyl)} />
+      </Container>
     </>
   )
 }
