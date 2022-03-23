@@ -39,14 +39,17 @@ const BagContextProvider: React.FC = ({ children }) => {
     return bagVinylQuantity
   }
 
+  const bagTotalPrice = getBagTotal()
+  const bagTotalQuantity = getBagVinylQuantity()
+
   return (
     <BagContext.Provider
       value={{
         vinylInBag,
         addVinyl,
         deleteVinyl,
-        getBagTotal,
-        getBagVinylQuantity,
+        bagTotalPrice,
+        bagTotalQuantity,
       }}
     >
       {children}

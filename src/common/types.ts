@@ -14,8 +14,8 @@ export interface IBagContext {
   vinylInBag: IVinyl[]
   addVinyl: (vinyl: IVinyl) => void
   deleteVinyl: (id: number) => void
-  getBagTotal: () => number
-  getBagVinylQuantity: () => number
+  bagTotalPrice: number
+  bagTotalQuantity: number
 }
 
 export type RootStackParamList = {
