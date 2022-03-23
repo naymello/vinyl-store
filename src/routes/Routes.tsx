@@ -46,6 +46,7 @@ const Routes: React.FC = () => (
         name="VinylDetails"
         component={VinylDetails}
         options={({ navigation }) => ({
+          headerTitle: () => <Logo />,
           headerLeft: () => (
             <NavigationIcon
               navigate={() => navigation.navigate('VinylSelection')}
