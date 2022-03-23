@@ -2,7 +2,8 @@ import styled from 'styled-components/native'
 
 export const Container = styled.View`
   width: 100%;
-  height: 100px;
+  height: 180px;
+  padding: 20px;
   background-color: ${({ theme }) => theme.colors.accent};
 `
 
