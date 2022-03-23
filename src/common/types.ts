@@ -18,6 +18,10 @@ export interface IBagContext {
   bagTotalQuantity: number
 }
 
+export interface IVinylContext {
+  vinyl: IVinyl[]
+}
+
 export type RootStackParamList = {
   VinylSelection: undefined
   Bag: undefined
