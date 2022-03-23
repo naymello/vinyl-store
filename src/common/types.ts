@@ -20,3 +20,9 @@ export interface IBagContext {
   deleteVinyl: (id: number) => void
   getBagTotal: () => number
 }
+
+export type RootStackParamList = {
+  VinylSelection: undefined
+  Bag: undefined
+  VinylDetails: { id: number } | undefined
+}

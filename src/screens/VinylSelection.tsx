@@ -2,17 +2,11 @@ import { ScrollView } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 
-import { IVinyl } from '../common/types'
+import { IVinyl, RootStackParamList } from '../common/types'
 import { useRequest } from '../hooks/useRequest'
 
 import VinylCard from '../components/VinylCard'
 import { Container } from '../components/Container/styles'
-
-type RootStackParamList = {
-  VinylSelection: undefined
-  Bag: undefined
-  VinylDetails: { id: number } | undefined
-}
 
 type Props = NativeStackScreenProps<RootStackParamList, 'VinylSelection'>
 
