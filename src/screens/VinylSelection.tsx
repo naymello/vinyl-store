@@ -23,8 +23,8 @@ const VinylSelection: React.FC<Props> = ({ navigation }) => {
     'https://api.github.com/gists/3648d4454d0c68d836fac03386c17be1'
   )
 
-  const vinylJSON = gist?.files['vinyl.json'].content as string
-  const vinyl: IVinyl[] = JSON.parse(vinylJSON)
+  const vinylJSON = gist?.files['vinyl.json'].content
+  const vinyl: IVinyl[] = vinylJSON ? JSON.parse(vinylJSON) : []
 
   return (
     <>
