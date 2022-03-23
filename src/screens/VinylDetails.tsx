@@ -1,11 +1,11 @@
-import { View, Text } from 'react-native'
+import VinylInformation from '../components/VinyInformation'
 
-const Vinyl: React.FC = () => {
+const VinylDetails: React.FC = () => {
   return (
-    <View>
-      <Text>Vinyl</Text>
-    </View>
+    <>
+      <VinylInformation />
+    </>
   )
 }
 
-export default Vinyl
+export default VinylDetails
