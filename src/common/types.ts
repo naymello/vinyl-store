@@ -10,10 +10,6 @@ export interface IVinyl {
   quantity?: number
 }
 
-export interface IVinylControl extends IVinyl {
-  deleteVinyl: (id: number) => void
-}
-
 export interface IBagContext {
   vinylInBag: IVinyl[]
   addVinyl: (vinyl: IVinyl) => void
