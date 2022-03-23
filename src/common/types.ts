@@ -8,3 +8,9 @@ export interface IVinyl {
   rating: number
   price: number
 }
+
+export interface IBagContext {
+  vinyl: IVinyl[]
+  addVinyl: (vinyl: IVinyl) => void
+  deleteVinyl: (id: number) => void
+}
