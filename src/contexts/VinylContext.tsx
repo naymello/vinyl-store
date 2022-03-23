@@ -13,7 +13,7 @@ interface IGistResponse {
   }
 }
 
-const BagContextProvider: React.FC = ({ children }) => {
+const VinylContextProvider: React.FC = ({ children }) => {
   const { response: gist } = useRequest<IGistResponse>(
     'https://api.github.com/gists/3648d4454d0c68d836fac03386c17be1'
   )
@@ -26,4 +26,4 @@ const BagContextProvider: React.FC = ({ children }) => {
   )
 }
 
-export default BagContextProvider
+export default VinylContextProvider
