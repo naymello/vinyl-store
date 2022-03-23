@@ -8,7 +8,7 @@ import { VinylContext } from '../contexts/VinylContext'
 
 import VinylInformation from '../components/VinyInformation'
 
-type Props = NativeStackScreenProps<RootStackParamList, 'VinylSelection'>
+type Props = NativeStackScreenProps<RootStackParamList, 'VinylDetails'>
 
 const VinylDetails: React.FC<Props> = ({ route }) => {
   const { getVinylById } = useContext(VinylContext) as IVinylContext
