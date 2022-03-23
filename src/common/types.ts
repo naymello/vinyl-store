@@ -16,6 +16,7 @@ export interface IBagContext {
   vinylInBag: IVinyl[]
   addVinyl: (vinyl: IVinyl) => void
   deleteVinyl: (id: number) => void
+  changeVinylQuantity: (id: number, mode: 'increase' | 'decrease') => void
   bagTotalPrice: number
   bagTotalQuantity: number
 }

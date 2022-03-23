@@ -54,6 +54,30 @@ const BagContextProvider: React.FC = ({ children }) => {
     return bagVinylQuantity
   }
 
+  const changeVinylQuantity = (
+    id: number,
+    mode: 'increase' | 'decrease' = 'increase'
+  ): void => {
+    const vinylInBagCopy = [...vinylInBag]
+
+    const vinylIndex = vinylInBag.findIndex((vinyl) => vinyl.id === id)
+    const vinyl = vinylInBagCopy[vinylIndex]
+
+    if (mode === 'increase') {
+      vinylInBagCopy[vinylIndex] = {
+        ...vinyl,
+        quantity: ++vinyl.quantity,
+      }
+    } else {
+      vinylInBagCopy[vinylIndex] = {
+        ...vinyl,
+        quantity: --vinyl.quantity,
+      }
+    }
+
+    setVinylInBag(vinylInBagCopy)
+  }
+
   const bagTotalPrice = getBagTotalPrice()
   const bagTotalQuantity = getBagTotalQuantity()
 
@@ -63,6 +87,7 @@ const BagContextProvider: React.FC = ({ children }) => {
         vinylInBag,
         addVinyl,
         deleteVinyl,
+        changeVinylQuantity,
         bagTotalPrice,
         bagTotalQuantity,
       }}
