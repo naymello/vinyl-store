@@ -42,7 +42,7 @@ const VinylSelection: React.FC<Props> = ({ navigation }) => {
       <ScrollView>
         <Container>
           {vinyl?.map((vinyl) => (
-            <VinylCard {...vinyl} key={vinyl.id} />
+            <VinylCard {...vinyl} key={vinyl.id} navigation={navigation} />
           ))}
         </Container>
       </ScrollView>
