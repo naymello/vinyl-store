@@ -21,7 +21,7 @@ const VinylCard: React.FC<Props> = ({
       <Information>
         <Title>{title}</Title>
         <Author>{author}</Author>
-        <Price>$ {price}</Price>
+        <Price>$ {price.toFixed(2)}</Price>
       </Information>
     </Wrapper>
   )

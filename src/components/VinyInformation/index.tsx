@@ -16,7 +16,7 @@ const VinylInformation: React.FC<IVinyl> = ({
       <Cover source={{ uri: cover }} />
       <Wrapper>
         <TextInformation fontSize="22px">{title}</TextInformation>
-        <Price>$ {price}</Price>
+        <Price>$ {price.toFixed(2)}</Price>
         <Container>
           <View>
             <TextInformation fontSize="18px">{author}</TextInformation>

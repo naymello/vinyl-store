@@ -30,7 +30,7 @@ const VinylBagCard: React.FC<Props> = ({
       <Cover source={{ uri: cover }}></Cover>
       <Information>
         <Title>{title}</Title>
-        <Price>$ {price}</Price>
+        <Price>$ {price.toFixed(2)}</Price>
       </Information>
     </Wrapper>
   )
