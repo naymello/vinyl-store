@@ -1,4 +1,4 @@
-import { IVinyl } from '../../common/types'
+import { IVinylControls } from '../../common/types'
 
 import {
   Cover,
@@ -9,7 +9,7 @@ import {
   DeleteButton,
 } from './styles'
 
-const VinylBagCard: React.FC<IVinyl> = ({ title, price, cover }) => {
+const VinylBagCard: React.FC<IVinylControls> = ({ title, price, cover }) => {
   return (
     <Wrapper>
       <DeleteButton />
