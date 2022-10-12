@@ -2,11 +2,11 @@ import Button from '../Button'
 
 import { Container, FooterText, FooterValue } from './styles'
 
-interface Props {
+interface BagFooterProps {
   totalValue: number
 }
 
-const BagFooter: React.FC<Props> = ({ totalValue }) => {
+const BagFooter: React.FC<BagFooterProps> = ({ totalValue }) => {
   return (
     <Container>
       <FooterText>

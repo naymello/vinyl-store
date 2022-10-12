@@ -1,17 +1,20 @@
 import { useContext } from 'react'
 
-import { IBagContext } from '../../common/types'
+import { BagData } from '../../common/types'
 import { BagContext } from '../../contexts/BagContext'
 
 import { Wrapper, Button, Caption, Quantity } from './styles'
 
-interface Props {
+interface QuantityControlProps {
   vinylId: number
   quantity: number
 }
 
-const QuantityControl: React.FC<Props> = ({ vinylId, quantity }) => {
-  const { changeVinylQuantity } = useContext(BagContext) as IBagContext
+const QuantityControl: React.FC<QuantityControlProps> = ({
+  vinylId,
+  quantity,
+}) => {
+  const { changeVinylQuantity } = useContext(BagContext) as BagData
 
   return (
     <Wrapper>

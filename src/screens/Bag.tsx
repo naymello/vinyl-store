@@ -3,7 +3,7 @@ import { ScrollView } from 'react-native'
 import styled from 'styled-components/native'
 
 import { BagContext } from '../contexts/BagContext'
-import { IBagContext } from '../common/types'
+import { BagData } from '../common/types'
 
 import { Container } from '../components/Container/styles'
 import VinylBagCard from '../components/VinylBagCard'
@@ -19,7 +19,7 @@ const NoVinylWarning = styled.Text`
 const Bag: React.FC = () => {
   const { vinylInBag, deleteVinyl, bagTotalPrice } = useContext(
     BagContext
-  ) as IBagContext
+  ) as BagData
 
   return (
     <>

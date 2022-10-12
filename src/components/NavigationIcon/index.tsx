@@ -1,11 +1,15 @@
 import { TouchableOpacity } from 'react-native'
 
-interface Props {
+interface NavigationIconProps {
   navigate: () => void
   icon: JSX.Element
 }
 
-const NavigationIcon: React.FC<Props> = ({ navigate, icon, children }) => {
+const NavigationIcon: React.FC<NavigationIconProps> = ({
+  navigate,
+  icon,
+  children,
+}) => {
   return (
     <TouchableOpacity
       onPress={navigate}

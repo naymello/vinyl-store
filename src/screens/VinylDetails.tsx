@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 
-import { IBagContext, IVinylContext, RootStackParamList } from '../common/types'
+import { BagData, VinylData, RootStackParamList } from '../common/types'
 
 import { BagContext } from '../contexts/BagContext'
 import { VinylContext } from '../contexts/VinylContext'
@@ -13,8 +13,8 @@ import { Container } from '../components/Container/styles'
 type Props = NativeStackScreenProps<RootStackParamList, 'VinylDetails'>
 
 const VinylDetails: React.FC<Props> = ({ route }) => {
-  const { getVinylById } = useContext(VinylContext) as IVinylContext
-  const { addVinyl } = useContext(BagContext) as IBagContext
+  const { getVinylById } = useContext(VinylContext) as VinylData
+  const { addVinyl } = useContext(BagContext) as BagData
 
   const vinyl = getVinylById(route.params?.id as number)
 

@@ -1,13 +1,13 @@
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import { IVinyl, RootStackParamList } from '../../common/types'
+import { Vinyl, RootStackParamList } from '../../common/types'
 
 import { Cover, Title, Wrapper, Author, Price, Information } from './styles'
 
-interface Props extends IVinyl {
+interface VinylCardProps extends Vinyl {
   navigation: NativeStackNavigationProp<RootStackParamList, 'VinylSelection'>
 }
 
-const VinylCard: React.FC<Props> = ({
+const VinylCard: React.FC<VinylCardProps> = ({
   id,
   title,
   author,

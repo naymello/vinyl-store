@@ -1,13 +1,13 @@
 import { useState, createContext } from 'react'
 
-import { IVinyl, IVinylInBag, IBagContext } from '../common/types'
+import { Vinyl, VinylBag, BagData } from '../common/types'
 
-export const BagContext = createContext<IBagContext | null>(null)
+export const BagContext = createContext<BagData | null>(null)
 
 const BagContextProvider: React.FC = ({ children }) => {
-  const [vinylInBag, setVinylInBag] = useState<IVinylInBag[]>([])
+  const [vinylInBag, setVinylInBag] = useState<VinylBag[]>([])
 
-  const addVinyl = (newVinyl: IVinyl) => {
+  const addVinyl = (newVinyl: Vinyl) => {
     const vinylInBagCopy = [...vinylInBag]
 
     const sameVinylIndex = vinylInBag.findIndex(

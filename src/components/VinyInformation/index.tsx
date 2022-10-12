@@ -1,9 +1,9 @@
 import { View } from 'react-native'
-import { IVinyl } from '../../common/types'
+import { Vinyl } from '../../common/types'
 
 import { Cover, Wrapper, Price, Container, TextInformation } from './styles'
 
-const VinylInformation: React.FC<IVinyl> = ({
+const VinylInformation: React.FC<Vinyl> = ({
   cover,
   title,
   author,

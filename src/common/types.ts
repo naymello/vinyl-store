@@ -1,4 +1,4 @@
-export interface IVinyl {
+export interface Vinyl {
   id: number
   title: string
   author: string
@@ -8,22 +8,22 @@ export interface IVinyl {
   price: number
 }
 
-export interface IVinylInBag extends IVinyl {
+export interface VinylBag extends Vinyl {
   quantity: number
 }
 
-export interface IBagContext {
-  vinylInBag: IVinylInBag[]
-  addVinyl: (vinyl: IVinyl) => void
+export interface BagData {
+  vinylInBag: VinylBag[]
+  addVinyl: (vinyl: Vinyl) => void
   deleteVinyl: (id: number) => void
   changeVinylQuantity: (id: number, mode: 'increase' | 'decrease') => void
   bagTotalPrice: number
   bagTotalQuantity: number
 }
 
-export interface IVinylContext {
-  vinyl: IVinyl[]
-  getVinylById: (id: number) => IVinyl
+export interface VinylData {
+  vinyl: Vinyl[]
+  getVinylById: (id: number) => Vinyl
 }
 
 export type RootStackParamList = {
