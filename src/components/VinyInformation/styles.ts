@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 
-import { screenDimensions } from '../../common/constants'
+import { screenDimensions } from '../../utils/constants'
 
 export const Cover = styled.Image`
   width: ${screenDimensions.windowWidth}px;

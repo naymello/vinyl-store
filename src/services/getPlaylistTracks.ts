@@ -1,4 +1,4 @@
-import { spotifyEndpoint, spotifyAuthToken } from '../common/constants'
+import { spotifyEndpoint, spotifyAuthToken } from '../utils/constants'
 import { Track } from '../common/types'
 
 const playlistId = '761BfN8cdi1Eqq4Jl4gR21'
