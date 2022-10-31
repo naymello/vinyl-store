@@ -8,6 +8,38 @@ export interface Vinyl {
   price: number
 }
 
+export interface Artist {
+  name: string
+  id: string
+}
+
+export interface Album {
+  album_type: string
+  artists: Artist[]
+  id: string
+  images: AlbumCover[]
+  name: string
+  release_date: string
+  release_date_precision: string
+  total_tracks: string
+  type: string
+}
+
+export interface AlbumCover {
+  height: number
+  url: string
+  width: number
+}
+
+export interface Track {
+  album: Album
+  name: string
+  preview_url: string
+  track: boolean
+  track_number: number
+  type: string
+}
+
 export interface VinylBag extends Vinyl {
   quantity: number
 }
