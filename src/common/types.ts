@@ -23,6 +23,7 @@ export interface Album {
   release_date_precision: string
   total_tracks: string
   type: string
+  tracks?: Track[]
 }
 
 export interface AlbumCover {
