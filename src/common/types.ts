@@ -49,6 +49,10 @@ export interface Track {
   type: string
 }
 
+export interface AlbumsData {
+  albums: Album[]
+}
+
 export interface VinylBag extends Vinyl {
   quantity: number
 }
@@ -68,7 +72,7 @@ export interface VinylData {
 }
 
 export type RootStackParamList = {
-  VinylSelection: undefined
+  AlbumSelection: undefined
   Bag: undefined
   VinylDetails: { id: number } | undefined
 }
