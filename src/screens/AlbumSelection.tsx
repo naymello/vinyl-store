@@ -18,7 +18,7 @@ const AlbumSelection: React.FC<AlbumSelectionProps> = ({ navigation }) => {
   const { albums } = useContext(AlbumsContext) as AlbumsData
 
   const handleNavigateToAlbum = (album: Album): void =>
-    navigation.navigate('AlbumDetails', album)
+    navigation.navigate('AlbumDetails', { album })
 
   return (
     <>
