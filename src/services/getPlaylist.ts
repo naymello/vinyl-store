@@ -1,11 +1,9 @@
 import { spotifyEndpoint, spotifyAuthToken } from '../utils/constants'
 import { Track } from '../common/types'
 
-const playlistId = '761BfN8cdi1Eqq4Jl4gR21'
-
-export const getPlaylist = async (): Promise<Track[] | undefined> => {
+export const getPlaylist = async (id: string): Promise<Track[] | undefined> => {
   try {
-    const response = await fetch(`${spotifyEndpoint}/playlists/${playlistId}`, {
+    const response = await fetch(`${spotifyEndpoint}/playlists/${id}`, {
       headers: {
         Accept: 'application/json',
         Authorization: spotifyAuthToken,
