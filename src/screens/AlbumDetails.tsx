@@ -1,5 +1,8 @@
+import { useEffect, useState } from 'react'
+import { FlatList } from 'react-native'
+import { Audio } from 'expo-av'
+import { Sound } from 'expo-av/build/Audio'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
-import { FlatList, SafeAreaView, ScrollView } from 'react-native'
 
 import { RootStackParamList } from '../common/types'
 
@@ -14,6 +17,31 @@ type AlbumDetailsProps = NativeStackScreenProps<
 >
 
 const AlbumDetails: React.FC<AlbumDetailsProps> = ({ route }) => {
+  const [trackPlayback, setTrackPlayback] = useState<Sound>()
+
+  useEffect(() => {
+    setupTrackPlayback()
+
+    return trackPlayback
+      ? () => {
+          trackPlayback.unloadAsync()
+        }
+      : undefined
+  }, [trackPlayback])
+
+  const setupTrackPlayback = async (): Promise<void> => {
+    await Audio.setAudioModeAsync({ playsInSilentModeIOS: true })
+  }
+
+  const playTrack = async (trackUrl: string): Promise<void> => {
+    const { sound: playback } = await Audio.Sound.createAsync({
+      uri: trackUrl,
+    })
+    setTrackPlayback(playback)
+
+    await playback.playAsync()
+  }
+
   const album = route.params?.album!
 
   return (
@@ -29,7 +57,9 @@ const AlbumDetails: React.FC<AlbumDetailsProps> = ({ route }) => {
           />
         }
         data={album.tracks}
-        renderItem={({ item }) => <TrackPlayer item={item} />}
+        renderItem={({ item: track }) => (
+          <TrackPlayer track={track} playTrack={playTrack} />
+        )}
         keyExtractor={(track) => track.id}
       />
       <Container>
