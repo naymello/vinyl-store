@@ -6,7 +6,7 @@ export const Touchable = styled.TouchableOpacity`
   flex-direction: row;
   justify-content: center;
   padding: 20px;
-  margin: 10px 0;
+  margin: 30px 0;
 `
 
 export const ButtonText = styled.Text`

@@ -1,14 +1,14 @@
-import { ButtonText, Touchable } from './styles'
+import { Touchable, ButtonText } from './styles'
 
 interface ButtonProps {
-  buttonText: string
-  action?: () => void
+  message: string
+  onPress: () => void
 }
 
-const Button: React.FC<ButtonProps> = ({ buttonText, action }) => {
+const Button: React.FC<ButtonProps> = ({ message, onPress }) => {
   return (
-    <Touchable onPress={action}>
-      <ButtonText>{buttonText}</ButtonText>
+    <Touchable onPress={onPress}>
+      <ButtonText>{message}</ButtonText>
     </Touchable>
   )
 }
