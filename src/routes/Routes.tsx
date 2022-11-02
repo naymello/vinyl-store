@@ -1,8 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native'
 
-import VinylSelection from '../screens/VinylSelection'
-import VinylDetails from '../screens/VinylDetails'
+import AlbumSelection from '../screens/AlbumSelection'
+import AlbumDetails from '../screens/AlbumDetails'
 import Bag from '../screens/Bag'
 
 import NavigationIcon from '../components/NavigationIcon'
@@ -18,7 +18,7 @@ const Stack = createNativeStackNavigator()
 const Routes: React.FC = () => (
   <NavigationContainer>
     <Stack.Navigator
-      initialRouteName="VinylSelection"
+      initialRouteName="AlbumSelection"
       screenOptions={{
         contentStyle: {
           backgroundColor: mainTheme.colors.background,
@@ -30,8 +30,8 @@ const Routes: React.FC = () => (
       }}
     >
       <Stack.Screen
-        name="VinylSelection"
-        component={VinylSelection}
+        name="AlbumSelection"
+        component={AlbumSelection}
         options={({ navigation }) => ({
           headerTitle: () => <Logo />,
           headerRight: () => (
@@ -40,8 +40,8 @@ const Routes: React.FC = () => (
         })}
       />
       <Stack.Screen
-        name="VinylDetails"
-        component={VinylDetails}
+        name="AlbumDetails"
+        component={AlbumDetails}
         options={({ navigation }) => ({
           headerTitle: () => <Logo />,
           headerLeft: () => (
