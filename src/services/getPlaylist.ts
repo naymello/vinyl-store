@@ -1,7 +1,9 @@
 import { spotifyEndpoint, spotifyAuthToken } from '../utils/constants'
-import { Track } from '../common/types'
+import { Playlist } from '../common/types'
 
-export const getPlaylist = async (id: string): Promise<Track[] | undefined> => {
+export const getPlaylist = async (
+  id: string
+): Promise<Playlist | undefined> => {
   try {
     const response = await fetch(`${spotifyEndpoint}/playlists/${id}`, {
       headers: {
