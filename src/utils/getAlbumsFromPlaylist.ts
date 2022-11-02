@@ -11,7 +11,7 @@ export const getAlbumsFromPlaylist = (
 
   for (const track of tracks) {
     if (!albumsTable[track.album.id]) {
-      albumsTable[track.album.id] = { ...track.album, tracks: [{ ...track }] }
+      albumsTable[track.album.id] = { ...track.album, tracks: [] }
     }
     albumsTable[track.album.id].tracks?.push(track)
   }
