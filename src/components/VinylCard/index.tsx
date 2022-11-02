@@ -4,7 +4,7 @@ import { Vinyl, RootStackParamList } from '../../common/types'
 import { Cover, Title, Wrapper, Author, Price, Information } from './styles'
 
 interface VinylCardProps extends Vinyl {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'VinylSelection'>
+  navigation: NativeStackNavigationProp<RootStackParamList, 'AlbumSelection'>
 }
 
 const VinylCard: React.FC<VinylCardProps> = ({
