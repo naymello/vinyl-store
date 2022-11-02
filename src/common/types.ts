@@ -47,6 +47,7 @@ export interface Track {
   track: boolean
   track_number: number
   type: string
+  id: string
 }
 
 export interface AlbumsData {
