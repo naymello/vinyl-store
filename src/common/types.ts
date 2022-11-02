@@ -74,5 +74,5 @@ export interface VinylData {
 export type RootStackParamList = {
   AlbumSelection: undefined
   Bag: undefined
-  VinylDetails: { id: number } | undefined
+  AlbumDetails: { album: Album } | undefined
 }
