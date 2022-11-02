@@ -8,6 +8,14 @@ export interface Vinyl {
   price: number
 }
 
+export interface Playlist {
+  tracks: {
+    items: {
+      track: Track
+    }[]
+  }
+}
+
 export interface Artist {
   name: string
   id: string
