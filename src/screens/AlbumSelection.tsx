@@ -22,7 +22,7 @@ const AlbumSelection: React.FC<AlbumSelectionProps> = ({ navigation }) => {
 
   return (
     <>
-      <StatusBar />
+      <StatusBar style="dark" />
       <ScrollView>
         <Container>
           {albums.map((album) => (
