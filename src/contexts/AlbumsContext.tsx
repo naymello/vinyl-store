@@ -8,7 +8,7 @@ export const AlbumsContext = createContext<AlbumsData | null>(null)
 
 const AlbumsContextProvider: React.FC = ({ children }) => {
   const { data: playlist } = useQuery(['playlist'], () =>
-    getPlaylist('761BfN8cdi1Eqq4Jl4gR21')
+    getPlaylist('7GmQiRi12MsOyfkOJ1zTzx')
   )
 
   const albums = getAlbumsFromPlaylist(playlist)
