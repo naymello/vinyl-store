@@ -6,7 +6,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootStackParamList, AlbumsData, Album } from '../common/types'
 
 import { AlbumsContext } from '../contexts/AlbumsContext'
-import AlbumSummary from '../components/VinylCard'
+import AlbumSummary from '../components/AlbumSummary'
 import { Container } from '../components/Container/styles'
 
 type AlbumSelectionProps = NativeStackScreenProps<
