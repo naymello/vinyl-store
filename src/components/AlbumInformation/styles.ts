@@ -23,7 +23,7 @@ export const Container = styled.View`
   justify-content: space-between;
 `
 
-export const TextInformation = styled.Text<{ fontSize: string }>`
+export const TextInformation = styled.Text<{ fontSize: number }>`
   font-size: ${({ fontSize }) => fontSize};
   font-weight: bold;
   margin: 2.5px 0;
