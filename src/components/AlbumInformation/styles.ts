@@ -24,7 +24,7 @@ export const Container = styled.View`
 `
 
 export const TextInformation = styled.Text<{ fontSize: number }>`
-  font-size: ${({ fontSize }) => fontSize};
+  font-size: ${({ fontSize }) => fontSize}px;
   font-weight: bold;
   margin: 2.5px 0;
 `
