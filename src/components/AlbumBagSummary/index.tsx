@@ -1,6 +1,9 @@
-import { AlbumInBag } from '../../common/types'
+import { useContext } from 'react'
 
 import QuantityControl from '../QuantityControl'
+import { BagContext } from '../../contexts/BagContext'
+import { Album, BagData } from '../../common/types'
+import DeleteIcon from '../../assets/DeleteIcon'
 
 import {
   Cover,
@@ -11,29 +14,32 @@ import {
   DeleteButton,
 } from './styles'
 
-import DeleteIcon from '../../assets/DeleteIcon'
-
-interface AlbumBagSummaryProps extends AlbumInBag {
-  deleteAlbum: (albumId: string) => void
+interface AlbumsBagSummaryProps {
+  album: Album
+  title: string
+  price: number
+  cover: string
+  quantity: number
 }
 
-const AlbumBagSummary: React.FC<AlbumBagSummaryProps> = ({
-  id,
+const AlbumBagSummary: React.FC<AlbumsBagSummaryProps> = ({
+  album,
   title,
   price,
   cover,
   quantity,
-  deleteAlbum,
 }) => {
+  const { deleteAlbum } = useContext(BagContext) as BagData
+
   return (
     <Wrapper>
-      <DeleteButton onPress={() => deleteAlbum(id)}>
+      <DeleteButton onPress={() => deleteAlbum(album.id)}>
         <DeleteIcon />
       </DeleteButton>
-      <Cover source={{ uri: cover }}></Cover>
+      <Cover source={{ uri: cover }} />
       <Information>
         <Title>{title}</Title>
-        <QuantityControl albumId={id} quantity={quantity} />
+        <QuantityControl album={album} quantity={quantity} />
         <Price>$ {price.toFixed(2)}</Price>
       </Information>
     </Wrapper>
