@@ -1,4 +1,4 @@
-import { VinylBag } from '../../common/types'
+import { AlbumInBag } from '../../common/types'
 
 import QuantityControl from '../QuantityControl'
 
@@ -13,31 +13,31 @@ import {
 
 import DeleteIcon from '../../assets/DeleteIcon'
 
-interface VinylBagCardProps extends VinylBag {
-  deleteVinyl: (id: number) => void
+interface AlbumBagSummaryProps extends AlbumInBag {
+  deleteAlbum: (albumId: string) => void
 }
 
-const VinylBagCard: React.FC<VinylBagCardProps> = ({
+const AlbumBagSummary: React.FC<AlbumBagSummaryProps> = ({
   id,
   title,
   price,
   cover,
   quantity,
-  deleteVinyl,
+  deleteAlbum,
 }) => {
   return (
     <Wrapper>
-      <DeleteButton onPress={() => deleteVinyl(id)}>
+      <DeleteButton onPress={() => deleteAlbum(id)}>
         <DeleteIcon />
       </DeleteButton>
       <Cover source={{ uri: cover }}></Cover>
       <Information>
         <Title>{title}</Title>
-        <QuantityControl vinylId={id} quantity={quantity} />
+        <QuantityControl albumId={id} quantity={quantity} />
         <Price>$ {price.toFixed(2)}</Price>
       </Information>
     </Wrapper>
   )
 }
 
-export default VinylBagCard
+export default AlbumBagSummary
