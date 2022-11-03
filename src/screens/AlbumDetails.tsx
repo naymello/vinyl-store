@@ -19,7 +19,9 @@ type AlbumDetailsProps = NativeStackScreenProps<
 
 const AlbumDetails: React.FC<AlbumDetailsProps> = ({ route }) => {
   const { increaseAlbumQuantity } = useContext(BagContext) as BagData
+
   const [trackPlayback, setTrackPlayback] = useState<Sound>()
+  const [trackPlaying, setTrackPlaying] = useState('')
 
   useEffect(() => {
     setupTrackPlaybackOnIOS()
@@ -36,12 +38,23 @@ const AlbumDetails: React.FC<AlbumDetailsProps> = ({ route }) => {
   }
 
   const playTrack = async (trackUrl: string): Promise<void> => {
+    if (trackPlaying === trackUrl) {
+      pauseTrack()
+      return
+    }
+
     const { sound: playback } = await Audio.Sound.createAsync({
       uri: trackUrl,
     })
     setTrackPlayback(playback)
+    setTrackPlaying(trackUrl)
 
     await playback.playAsync()
+  }
+
+  const pauseTrack = async (): Promise<void> => {
+    trackPlayback?.pauseAsync()
+    setTrackPlaying('')
   }
 
   const album = route.params?.album!
