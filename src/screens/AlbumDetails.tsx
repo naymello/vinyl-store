@@ -73,7 +73,11 @@ const AlbumDetails: React.FC<AlbumDetailsProps> = ({ route }) => {
         }
         data={album.tracks}
         renderItem={({ item: track }) => (
-          <TrackPlayer track={track} playTrack={playTrack} />
+          <TrackPlayer
+            track={track}
+            playTrack={playTrack}
+            isTrackPlaying={trackPlaying === track.preview_url}
+          />
         )}
         keyExtractor={(track) => track.id}
       />
