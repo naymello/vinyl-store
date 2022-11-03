@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { ScrollView } from 'react-native'
+import { FlatList } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 
@@ -23,9 +23,10 @@ const AlbumSelection: React.FC<AlbumSelectionProps> = ({ navigation }) => {
   return (
     <>
       <StatusBar style="dark" />
-      <ScrollView>
-        <Container>
-          {albums.map((album) => (
+      <Container>
+        <FlatList
+          data={albums}
+          renderItem={({ item: album }) => (
             <AlbumSummary
               album={album}
               title={album.name}
@@ -35,9 +36,9 @@ const AlbumSelection: React.FC<AlbumSelectionProps> = ({ navigation }) => {
               onNavigateToAlbum={handleNavigateToAlbum}
               key={album.id}
             />
-          ))}
-        </Container>
-      </ScrollView>
+          )}
+        />
+      </Container>
     </>
   )
 }
