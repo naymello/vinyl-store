@@ -1,28 +1,30 @@
 import { useContext } from 'react'
 
-import { BagData } from '../../common/types'
+import { Album, BagData } from '../../common/types'
 import { BagContext } from '../../contexts/BagContext'
 
 import { Wrapper, Button, Caption, Quantity } from './styles'
 
 interface QuantityControlProps {
-  vinylId: number
+  album: Album
   quantity: number
 }
 
 const QuantityControl: React.FC<QuantityControlProps> = ({
-  vinylId,
+  album,
   quantity,
 }) => {
-  const { changeVinylQuantity } = useContext(BagContext) as BagData
+  const { increaseAlbumQuantity, decreaseAlbumQuantity } = useContext(
+    BagContext
+  ) as BagData
 
   return (
     <Wrapper>
-      <Button onPress={() => changeVinylQuantity(vinylId, 'decrease')}>
+      <Button onPress={() => decreaseAlbumQuantity(album)}>
         <Caption>-</Caption>
       </Button>
       <Quantity>{quantity}</Quantity>
-      <Button onPress={() => changeVinylQuantity(vinylId, 'increase')}>
+      <Button onPress={() => increaseAlbumQuantity(album)}>
         <Caption>+</Caption>
       </Button>
     </Wrapper>
