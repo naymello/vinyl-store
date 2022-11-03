@@ -31,6 +31,7 @@ export interface Album {
   release_date_precision: string
   total_tracks: string
   type: string
+  price?: number
   tracks?: Track[]
 }
 
@@ -54,22 +55,18 @@ export interface AlbumsData {
   albums: Album[]
 }
 
-export interface VinylBag extends Vinyl {
+export interface AlbumInBag extends Album {
   quantity: number
 }
 
 export interface BagData {
-  vinylInBag: VinylBag[]
-  addVinyl: (vinyl: Vinyl) => void
-  deleteVinyl: (id: number) => void
-  changeVinylQuantity: (id: number, mode: 'increase' | 'decrease') => void
+  albumsBag: AlbumInBag[]
+  addAlbum: (newAlbum: Album) => void
+  deleteAlbum: (albumId: string) => void
+  increaseAlbumQuantity: (albumId: string) => void
+  decreaseAlbumQuantity: (albumId: string) => void
   bagTotalPrice: number
   bagTotalQuantity: number
-}
-
-export interface VinylData {
-  vinyl: Vinyl[]
-  getVinylById: (id: number) => Vinyl
 }
 
 export type RootStackParamList = {
