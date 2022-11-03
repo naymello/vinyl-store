@@ -1,15 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { FlatList } from 'react-native'
 import { Audio } from 'expo-av'
 import { Sound } from 'expo-av/build/Audio'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 
-import { RootStackParamList } from '../common/types'
+import { BagData, RootStackParamList } from '../common/types'
 
 import AlbumInformation from '../components/AlbumInformation'
 import Button from '../components/Button'
 import { Container } from '../components/Container/styles'
 import TrackPlayer from '../components/TrackPlayer'
+import { BagContext } from '../contexts/BagContext'
 
 type AlbumDetailsProps = NativeStackScreenProps<
   RootStackParamList,
@@ -17,6 +18,7 @@ type AlbumDetailsProps = NativeStackScreenProps<
 >
 
 const AlbumDetails: React.FC<AlbumDetailsProps> = ({ route }) => {
+  const { increaseAlbumQuantity } = useContext(BagContext) as BagData
   const [trackPlayback, setTrackPlayback] = useState<Sound>()
 
   useEffect(() => {
@@ -63,7 +65,10 @@ const AlbumDetails: React.FC<AlbumDetailsProps> = ({ route }) => {
         keyExtractor={(track) => track.id}
       />
       <Container>
-        <Button message="Add to your bag" onPress={(): void => undefined} />
+        <Button
+          message="Add to your bag"
+          onPress={() => increaseAlbumQuantity(album)}
+        />
       </Container>
     </>
   )
