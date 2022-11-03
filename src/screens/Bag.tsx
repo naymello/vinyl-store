@@ -17,19 +17,20 @@ const NoAlbumWarning = styled.Text`
 `
 
 const Bag: React.FC = () => {
-  const { albumsBag, deleteAlbum, bagTotalPrice } = useContext(
-    BagContext
-  ) as BagData
+  const { albumsBag, bagTotalPrice } = useContext(BagContext) as BagData
 
   return (
     <>
       <ScrollView>
         <Container>
-          {albumsBag.map((vinyl) => (
+          {albumsBag.map((bagAlbum) => (
             <AlbumBagSummary
-              {...vinyl}
-              deleteAlbum={deleteAlbum}
-              key={vinyl.id}
+              album={bagAlbum.album}
+              title={bagAlbum.album.name}
+              price={bagAlbum.album.price!}
+              cover={bagAlbum.album.images[0].url}
+              quantity={bagAlbum.quantity}
+              key={bagAlbum.album.id}
             />
           ))}
           {!albumsBag.length && (
