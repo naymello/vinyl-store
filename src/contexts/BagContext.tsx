@@ -1,16 +1,16 @@
 import { useState, createContext } from 'react'
 
-import { AlbumInBag, BagData } from '../common/types'
+import { Album, AlbumsBagItem, BagData } from '../common/types'
 
 export const BagContext = createContext<BagData | null>(null)
 
 const BagContextProvider: React.FC = ({ children }) => {
-  const [albumsBag, setAlbumsBag] = useState<AlbumInBag[]>([])
+  const [albumsBag, setAlbumsBag] = useState<AlbumsBagItem[]>([])
 
   const deleteAlbum = (albumId: string) => {
     const albumsBagCopy = [...albumsBag]
     const filteredAlbumsBag = albumsBagCopy.filter(
-      (album) => album.id !== albumId
+      (bagAlbum) => bagAlbum.album.id !== albumId
     )
 
     setAlbumsBag(filteredAlbumsBag)
@@ -19,7 +19,7 @@ const BagContextProvider: React.FC = ({ children }) => {
   const getBagTotalPrice = (): number => {
     const bagTotal = albumsBag.reduce(
       (previous, current) =>
-        previous + current.price! * (current.quantity || 1),
+        previous + current.album.price! * (current.quantity || 1),
       0
     )
 
@@ -35,42 +35,46 @@ const BagContextProvider: React.FC = ({ children }) => {
     return albumTotalQuantity
   }
 
-  const increaseAlbumQuantity = (album: AlbumInBag) => {
+  const increaseAlbumQuantity = (album: Album) => {
     const albumsBagCopy = [...albumsBag]
 
-    const albumIndex = albumsBag.findIndex(
-      (albumInBag) => albumInBag.id === album.id
+    const bagAlbumIndex = albumsBag.findIndex(
+      (bagAlbum) => bagAlbum.album.id === album.id
     )
 
-    const isAlbumAlreadyInBag = albumIndex !== -1
+    const isAlbumAlreadyInBag = bagAlbumIndex !== -1
 
     if (!isAlbumAlreadyInBag) {
       albumsBagCopy.push({
-        ...album,
+        album,
         quantity: 1,
       })
     } else {
-      albumsBagCopy[albumIndex] = {
-        ...album,
-        quantity: ++album.quantity,
+      const albumQuantity = albumsBag[bagAlbumIndex].quantity
+
+      albumsBagCopy[bagAlbumIndex] = {
+        album,
+        quantity: albumQuantity + 1,
       }
     }
 
     setAlbumsBag(albumsBagCopy)
   }
 
-  const decreaseAlbumQuantity = (album: AlbumInBag) => {
+  const decreaseAlbumQuantity = (album: Album) => {
     const albumsBagCopy = [...albumsBag]
 
-    const albumIndex = albumsBag.findIndex(
-      (albumInBag) => albumInBag.id === album.id
+    const bagAlbumIndex = albumsBag.findIndex(
+      (bagAlbum) => bagAlbum.album.id === album.id
     )
 
-    if (album.quantity === 1) return deleteAlbum(album.id)
+    const albumInBag = albumsBag[bagAlbumIndex]
 
-    albumsBagCopy[albumIndex] = {
-      ...album,
-      quantity: --album.quantity,
+    if (albumInBag.quantity === 1) return deleteAlbum(album.id)
+
+    albumsBagCopy[bagAlbumIndex] = {
+      album,
+      quantity: albumInBag.quantity - 1,
     }
 
     setAlbumsBag(albumsBagCopy)
