@@ -7,22 +7,6 @@ export const BagContext = createContext<BagData | null>(null)
 const BagContextProvider: React.FC = ({ children }) => {
   const [albumsBag, setAlbumsBag] = useState<AlbumInBag[]>([])
 
-  const addAlbum = (newAlbum: Album) => {
-    const albumsBagCopy = [...albumsBag]
-
-    const hasSameAlbum = albumsBag
-      .map((albums) => albums.id)
-      .includes(newAlbum.id)
-
-    if (hasSameAlbum) {
-      increaseAlbumQuantity(newAlbum.id)
-    } else {
-      albumsBagCopy.push({ ...newAlbum, quantity: 1 })
-    }
-
-    setAlbumsBag(albumsBagCopy)
-  }
-
   const deleteAlbum = (albumId: string) => {
     const albumsBagCopy = [...albumsBag]
     const filteredAlbumsBag = albumsBagCopy.filter(
@@ -51,15 +35,25 @@ const BagContextProvider: React.FC = ({ children }) => {
     return albumTotalQuantity
   }
 
-  const increaseAlbumQuantity = (albumId: string) => {
+  const increaseAlbumQuantity = (album: AlbumInBag) => {
     const albumsBagCopy = [...albumsBag]
 
-    const albumIndex = albumsBag.findIndex((album) => album.id === albumId)
-    const album = albumsBagCopy[albumIndex]
+    const albumIndex = albumsBag.findIndex(
+      (albumInBag) => albumInBag.id === album.id
+    )
 
-    albumsBagCopy[albumIndex] = {
-      ...album,
-      quantity: ++album.quantity,
+    const isAlbumAlreadyInBag = albumIndex !== -1
+
+    if (!isAlbumAlreadyInBag) {
+      albumsBagCopy.push({
+        ...album,
+        quantity: 1,
+      })
+    } else {
+      albumsBagCopy[albumIndex] = {
+        ...album,
+        quantity: ++album.quantity,
+      }
     }
 
     setAlbumsBag(albumsBagCopy)
@@ -88,7 +82,6 @@ const BagContextProvider: React.FC = ({ children }) => {
     <BagContext.Provider
       value={{
         albumsBag,
-        addAlbum,
         deleteAlbum,
         increaseAlbumQuantity,
         decreaseAlbumQuantity,
