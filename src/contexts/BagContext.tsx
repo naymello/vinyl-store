@@ -1,39 +1,41 @@
 import { useState, createContext } from 'react'
 
-import { Vinyl, VinylBag, BagData } from '../common/types'
+import { AlbumInBag, BagData, Album } from '../common/types'
 
 export const BagContext = createContext<BagData | null>(null)
 
 const BagContextProvider: React.FC = ({ children }) => {
-  const [vinylInBag, setVinylInBag] = useState<VinylBag[]>([])
+  const [albumsBag, setAlbumsBag] = useState<AlbumInBag[]>([])
 
-  const addVinyl = (newVinyl: Vinyl) => {
-    const vinylInBagCopy = [...vinylInBag]
+  const addAlbum = (newAlbum: Album) => {
+    const albumsBagCopy = [...albumsBag]
 
-    const sameVinylIndex = vinylInBag.findIndex(
-      (vinyl) => vinyl.id === newVinyl.id
-    )
-    const hasSameVinyl = sameVinylIndex !== -1
+    const hasSameAlbum = albumsBag
+      .map((albums) => albums.id)
+      .includes(newAlbum.id)
 
-    if (hasSameVinyl) {
-      changeVinylQuantity(newVinyl.id)
+    if (hasSameAlbum) {
+      increaseAlbumQuantity(newAlbum.id)
     } else {
-      vinylInBagCopy.push({ ...newVinyl, quantity: 1 })
+      albumsBagCopy.push({ ...newAlbum, quantity: 1 })
     }
 
-    setVinylInBag(vinylInBagCopy)
+    setAlbumsBag(albumsBagCopy)
   }
 
-  const deleteVinyl = (id: number) => {
-    const vinylInBagCopy = [...vinylInBag]
-    const filteredVinylInBag = vinylInBagCopy.filter((vinyl) => vinyl.id !== id)
+  const deleteAlbum = (albumId: string) => {
+    const albumsBagCopy = [...albumsBag]
+    const filteredAlbumsBag = albumsBagCopy.filter(
+      (album) => album.id !== albumId
+    )
 
-    setVinylInBag(filteredVinylInBag)
+    setAlbumsBag(filteredAlbumsBag)
   }
 
   const getBagTotalPrice = (): number => {
-    const bagTotal = vinylInBag.reduce(
-      (previous, current) => previous + current.price * (current.quantity || 1),
+    const bagTotal = albumsBag.reduce(
+      (previous, current) =>
+        previous + current.price! * (current.quantity || 1),
       0
     )
 
@@ -41,39 +43,42 @@ const BagContextProvider: React.FC = ({ children }) => {
   }
 
   const getBagTotalQuantity = (): number => {
-    const bagVinylQuantity = vinylInBag.reduce(
+    const albumTotalQuantity = albumsBag.reduce(
       (previous, current) => previous + (current.quantity || 1),
       0
     )
 
-    return bagVinylQuantity
+    return albumTotalQuantity
   }
 
-  const changeVinylQuantity = (
-    id: number,
-    mode: 'increase' | 'decrease' = 'increase'
-  ): void => {
-    const vinylInBagCopy = [...vinylInBag]
+  const increaseAlbumQuantity = (albumId: string) => {
+    const albumsBagCopy = [...albumsBag]
 
-    const vinylIndex = vinylInBag.findIndex((vinyl) => vinyl.id === id)
-    const vinyl = vinylInBagCopy[vinylIndex]
+    const albumIndex = albumsBag.findIndex((album) => album.id === albumId)
+    const album = albumsBagCopy[albumIndex]
 
-    if (mode === 'decrease' && vinyl.quantity === 1)
-      return deleteVinyl(vinyl.id)
-
-    if (mode === 'increase') {
-      vinylInBagCopy[vinylIndex] = {
-        ...vinyl,
-        quantity: ++vinyl.quantity,
-      }
-    } else {
-      vinylInBagCopy[vinylIndex] = {
-        ...vinyl,
-        quantity: --vinyl.quantity,
-      }
+    albumsBagCopy[albumIndex] = {
+      ...album,
+      quantity: ++album.quantity,
     }
 
-    setVinylInBag(vinylInBagCopy)
+    setAlbumsBag(albumsBagCopy)
+  }
+
+  const decreaseAlbumQuantity = (albumId: string) => {
+    const albumsBagCopy = [...albumsBag]
+
+    const albumIndex = albumsBag.findIndex((album) => album.id === albumId)
+    const album = albumsBagCopy[albumIndex]
+
+    if (album.quantity === 1) return deleteAlbum(album.id)
+
+    albumsBagCopy[albumIndex] = {
+      ...album,
+      quantity: --album.quantity,
+    }
+
+    setAlbumsBag(albumsBagCopy)
   }
 
   const bagTotalPrice = getBagTotalPrice()
@@ -82,10 +87,11 @@ const BagContextProvider: React.FC = ({ children }) => {
   return (
     <BagContext.Provider
       value={{
-        vinylInBag,
-        addVinyl,
-        deleteVinyl,
-        changeVinylQuantity,
+        albumsBag,
+        addAlbum,
+        deleteAlbum,
+        increaseAlbumQuantity,
+        decreaseAlbumQuantity,
         bagTotalPrice,
         bagTotalQuantity,
       }}
