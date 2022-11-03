@@ -1,13 +1,3 @@
-export interface Vinyl {
-  id: number
-  title: string
-  author: string
-  releaseYear: number
-  genres: string[]
-  cover: string
-  price: number
-}
-
 export interface Playlist {
   tracks: {
     items: {
