@@ -51,7 +51,7 @@ const AlbumDetails: React.FC<AlbumDetailsProps> = ({ route }) => {
           <AlbumInformation
             title={album.name}
             artists={album.artists}
-            price={album.tracks?.length! * 5 + 0.99}
+            price={album.price!}
             cover={album.images[0].url}
             releaseDate={album.release_date}
           />
