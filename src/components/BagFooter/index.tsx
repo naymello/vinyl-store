@@ -12,7 +12,7 @@ const BagFooter: React.FC<BagFooterProps> = ({ totalValue }) => {
       <FooterText>
         Total: <FooterValue> $ {totalValue.toFixed(2)}</FooterValue>
       </FooterText>
-      <Button buttonText="Go to payment" />
+      <Button message="Go to payment" onPress={(): void => undefined} />
     </Container>
   )
 }
