@@ -22,7 +22,7 @@ const AlbumDetails: React.FC<AlbumDetailsProps> = ({ route }) => {
   const [trackPlayback, setTrackPlayback] = useState<Sound>()
 
   useEffect(() => {
-    setupTrackPlayback()
+    setupTrackPlaybackOnIOS()
 
     return trackPlayback
       ? () => {
@@ -31,7 +31,7 @@ const AlbumDetails: React.FC<AlbumDetailsProps> = ({ route }) => {
       : undefined
   }, [trackPlayback])
 
-  const setupTrackPlayback = async (): Promise<void> => {
+  const setupTrackPlaybackOnIOS = async (): Promise<void> => {
     await Audio.setAudioModeAsync({ playsInSilentModeIOS: true })
   }
 
