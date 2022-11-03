@@ -25,7 +25,7 @@ const AlbumInformation: React.FC<AlbumInformationProps> = ({
     <>
       <Cover source={{ uri: cover }} />
       <Wrapper>
-        <TextInformation fontSize={22}>{title}</TextInformation>
+        <TextInformation fontSize={24}>{title}</TextInformation>
         <TextInformation fontSize={18}>
           {artistsNames}, {releaseYear}
         </TextInformation>
