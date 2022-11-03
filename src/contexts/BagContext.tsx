@@ -1,6 +1,6 @@
 import { useState, createContext } from 'react'
 
-import { AlbumInBag, BagData, Album } from '../common/types'
+import { AlbumInBag, BagData } from '../common/types'
 
 export const BagContext = createContext<BagData | null>(null)
 
@@ -59,11 +59,12 @@ const BagContextProvider: React.FC = ({ children }) => {
     setAlbumsBag(albumsBagCopy)
   }
 
-  const decreaseAlbumQuantity = (albumId: string) => {
+  const decreaseAlbumQuantity = (album: AlbumInBag) => {
     const albumsBagCopy = [...albumsBag]
 
-    const albumIndex = albumsBag.findIndex((album) => album.id === albumId)
-    const album = albumsBagCopy[albumIndex]
+    const albumIndex = albumsBag.findIndex(
+      (albumInBag) => albumInBag.id === album.id
+    )
 
     if (album.quantity === 1) return deleteAlbum(album.id)
 
