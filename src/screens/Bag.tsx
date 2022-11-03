@@ -6,10 +6,10 @@ import { BagContext } from '../contexts/BagContext'
 import { BagData } from '../common/types'
 
 import { Container } from '../components/Container/styles'
-import VinylBagCard from '../components/VinylBagCard'
+import AlbumBagSummary from '../components/AlbumBagSummary'
 import BagFooter from '../components/BagFooter'
 
-const NoVinylWarning = styled.Text`
+const NoAlbumWarning = styled.Text`
   font-size: 16px;
   align-self: center;
   margin: auto 0;
@@ -17,7 +17,7 @@ const NoVinylWarning = styled.Text`
 `
 
 const Bag: React.FC = () => {
-  const { vinylInBag, deleteVinyl, bagTotalPrice } = useContext(
+  const { albumsBag, deleteAlbum, bagTotalPrice } = useContext(
     BagContext
   ) as BagData
 
@@ -25,13 +25,17 @@ const Bag: React.FC = () => {
     <>
       <ScrollView>
         <Container>
-          {vinylInBag.map((vinyl) => (
-            <VinylBagCard {...vinyl} deleteVinyl={deleteVinyl} key={vinyl.id} />
+          {albumsBag.map((vinyl) => (
+            <AlbumBagSummary
+              {...vinyl}
+              deleteAlbum={deleteAlbum}
+              key={vinyl.id}
+            />
           ))}
-          {!vinylInBag.length && (
-            <NoVinylWarning>
+          {!albumsBag.length && (
+            <NoAlbumWarning>
               You don't have any vinyl in your bag yet.
-            </NoVinylWarning>
+            </NoAlbumWarning>
           )}
         </Container>
       </ScrollView>
