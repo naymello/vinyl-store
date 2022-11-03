@@ -51,9 +51,8 @@ export interface AlbumInBag extends Album {
 
 export interface BagData {
   albumsBag: AlbumInBag[]
-  addAlbum: (newAlbum: Album) => void
   deleteAlbum: (albumId: string) => void
-  increaseAlbumQuantity: (albumId: string) => void
+  increaseAlbumQuantity: (album: AlbumInBag) => void
   decreaseAlbumQuantity: (albumId: string) => void
   bagTotalPrice: number
   bagTotalQuantity: number
