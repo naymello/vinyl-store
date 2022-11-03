@@ -1,7 +1,7 @@
 import { Artist } from '../../common/types'
 import { getArtistsNames } from '../../utils/getArtistsNames'
 
-import { Cover, Wrapper, Price, Container, TextInformation } from './styles'
+import { Cover, Wrapper, Price, TextInformation } from './styles'
 
 type AlbumInformationProps = {
   title: string
