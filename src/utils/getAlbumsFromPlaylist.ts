@@ -1,4 +1,5 @@
 import { Album, Playlist } from '../common/types'
+import { setAlbumPrices } from './setAlbumPrices'
 
 export const getAlbumsFromPlaylist = (
   playlist: Playlist | undefined
@@ -16,7 +17,9 @@ export const getAlbumsFromPlaylist = (
     albumsTable[track.album.id].tracks?.push(track)
   }
 
-  const albums = Object.values(albumsTable)
+  const albumsUnpriced = Object.values(albumsTable)
+
+  const albums = setAlbumPrices(albumsUnpriced)
 
   return albums
 }

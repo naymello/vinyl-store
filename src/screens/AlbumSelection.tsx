@@ -30,7 +30,7 @@ const AlbumSelection: React.FC<AlbumSelectionProps> = ({ navigation }) => {
               album={album}
               title={album.name}
               artists={album.artists}
-              price={album.tracks?.length! * 5 + 0.99}
+              price={album.price!}
               cover={album.images[0].url}
               onNavigateToAlbum={handleNavigateToAlbum}
               key={album.id}
