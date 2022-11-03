@@ -1,4 +1,3 @@
-import { View } from 'react-native'
 import { Artist } from '../../common/types'
 import { getArtistsNames } from '../../utils/getArtistsNames'
 
@@ -27,13 +26,10 @@ const AlbumInformation: React.FC<AlbumInformationProps> = ({
       <Cover source={{ uri: cover }} />
       <Wrapper>
         <TextInformation fontSize={22}>{title}</TextInformation>
+        <TextInformation fontSize={18}>
+          {artistsNames}, {releaseYear}
+        </TextInformation>
         <Price>$ {price.toFixed(2)}</Price>
-        <Container>
-          <View>
-            <TextInformation fontSize={18}>{artistsNames}</TextInformation>
-            <TextInformation fontSize={18}>{releaseYear}</TextInformation>
-          </View>
-        </Container>
       </Wrapper>
     </>
   )
