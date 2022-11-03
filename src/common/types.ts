@@ -53,7 +53,7 @@ export interface BagData {
   albumsBag: AlbumInBag[]
   deleteAlbum: (albumId: string) => void
   increaseAlbumQuantity: (album: AlbumInBag) => void
-  decreaseAlbumQuantity: (albumId: string) => void
+  decreaseAlbumQuantity: (album: AlbumInBag) => void
   bagTotalPrice: number
   bagTotalQuantity: number
 }
