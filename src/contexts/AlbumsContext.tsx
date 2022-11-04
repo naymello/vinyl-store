@@ -11,7 +11,7 @@ const AlbumsContextProvider: React.FC = ({ children }) => {
     data: playlist,
     refetch,
     isRefetching,
-  } = useQuery(['playlist'], () => getPlaylist('7GmQiRi12MsOyfkOJ1zTzx'))
+  } = useQuery(['playlist'], getPlaylist)
 
   const albums = getAlbumsFromPlaylist(playlist)
 
