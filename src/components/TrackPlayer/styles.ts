@@ -7,6 +7,7 @@ export const Container = styled.View`
 
 export const Wrapper = styled.View`
   flex-direction: row;
+  align-items: center;
   padding: 5px 0;
 `
 export const Title = styled.Text<{ isTrackPlaying: boolean }>`
