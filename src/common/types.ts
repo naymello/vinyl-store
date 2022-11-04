@@ -1,3 +1,5 @@
+import { QueryObserverResult } from '@tanstack/query-core'
+
 export interface Playlist {
   tracks: {
     items: {
@@ -43,6 +45,8 @@ export interface Track {
 
 export interface AlbumsData {
   albums: Album[]
+  refetch: () => Promise<QueryObserverResult<Playlist | undefined, unknown>>
+  isRefetching: boolean
 }
 
 export interface AlbumsBagItem {
