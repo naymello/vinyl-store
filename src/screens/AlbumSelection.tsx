@@ -40,7 +40,12 @@ const AlbumSelection: React.FC<AlbumSelectionProps> = ({ navigation }) => {
             />
           )}
           refreshControl={
-            <RefreshControl onRefresh={refetch} refreshing={isRefetching} />
+            <RefreshControl
+              onRefresh={refetch}
+              refreshing={isRefetching}
+              colors={['#D1F9FF']}
+              tintColor="#D1F9FF"
+            />
           }
         />
       </Container>
