@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { FlatList } from 'react-native'
+import { FlatList, RefreshControl } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 
@@ -15,7 +15,9 @@ type AlbumSelectionProps = NativeStackScreenProps<
 >
 
 const AlbumSelection: React.FC<AlbumSelectionProps> = ({ navigation }) => {
-  const { albums } = useContext(AlbumsContext) as AlbumsData
+  const { albums, refetch, isRefetching } = useContext(
+    AlbumsContext
+  ) as AlbumsData
 
   const handleNavigateToAlbum = (album: Album): void =>
     navigation.navigate('AlbumDetails', { album })
@@ -37,6 +39,9 @@ const AlbumSelection: React.FC<AlbumSelectionProps> = ({ navigation }) => {
               key={album.id}
             />
           )}
+          refreshControl={
+            <RefreshControl onRefresh={refetch} refreshing={isRefetching} />
+          }
         />
       </Container>
     </>

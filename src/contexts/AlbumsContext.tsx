@@ -7,14 +7,16 @@ import { AlbumsData } from '../common/types'
 export const AlbumsContext = createContext<AlbumsData | null>(null)
 
 const AlbumsContextProvider: React.FC = ({ children }) => {
-  const { data: playlist } = useQuery(['playlist'], () =>
-    getPlaylist('7GmQiRi12MsOyfkOJ1zTzx')
-  )
+  const {
+    data: playlist,
+    refetch,
+    isRefetching,
+  } = useQuery(['playlist'], () => getPlaylist('7GmQiRi12MsOyfkOJ1zTzx'))
 
   const albums = getAlbumsFromPlaylist(playlist)
 
   return (
-    <AlbumsContext.Provider value={{ albums }}>
+    <AlbumsContext.Provider value={{ albums, refetch, isRefetching }}>
       {children}
     </AlbumsContext.Provider>
   )
