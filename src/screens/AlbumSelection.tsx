@@ -47,6 +47,7 @@ const AlbumSelection: React.FC<AlbumSelectionProps> = ({ navigation }) => {
               tintColor="#D1F9FF"
             />
           }
+          showsVerticalScrollIndicator={false}
         />
       </Container>
     </>

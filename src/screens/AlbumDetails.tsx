@@ -80,6 +80,7 @@ const AlbumDetails: React.FC<AlbumDetailsProps> = ({ route }) => {
           />
         )}
         keyExtractor={(track) => track.id}
+        showsVerticalScrollIndicator={false}
       />
       <Container>
         <Button

@@ -38,6 +38,7 @@ const Bag: React.FC = () => {
             You don't have any vinyl in your bag yet.
           </NoAlbumWarning>
         }
+        showsVerticalScrollIndicator={false}
       />
       <BagFooter totalValue={bagTotalPrice} />
     </>
