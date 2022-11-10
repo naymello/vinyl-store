@@ -18,7 +18,9 @@ It has three screens:
 ## Technologies used
 
 - TypeScript
+- Spotify API
 - React Native
-- Expo
+- React Query
 - React Navigation
 - Styled Components
+- Expo (and Expo AV)
